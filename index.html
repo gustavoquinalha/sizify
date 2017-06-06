@@ -1,33 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Vuew</title>
-    <link rel="stylesheet" href="/dist/app.css">
-  </head>
-  <body>
-    <div id="app">
 
+<head>
+  <meta charset="utf-8">
+  <title>Vuew</title>
+  <link rel="stylesheet" href="/dist/app.css">
+</head>
 
-      <div id="app">
-        <input placeholder="edit me" @keyup.enter="keyUpShow" value="http://">
-        <div class="container">
-          <div class="item" v-for="size in sizes" v-show="site">
-              <div class=" box">
-                <div class="">
-                  width: <input type="text" name="" value="" v-model="size.width"><br />
-                  height: <input type="text" name="" value="" v-model="size.height">
-                </div>
-                <iframe :src="site" v-bind:width="size.width" v-bind:height="size.height"></iframe>
-              </div>
+<body>
+  <div id="app">
+
+    <div class="rel-menu">
+      <div class="menu">
+        <div class="menu-topo margin container align-center space-between">
+          <div class="basis2 text-left">
+            <strong>Vuew</strong>
+          </div>
+          <div class="flex">
+            <input @keyup.enter="keyUpShow" class="input" placeholder="http://github.com">
+          </div>
+          <div class="basis2 text-right">
+            <small>Links</small>
           </div>
         </div>
       </div>
-
-
-
-
     </div>
-    <script src="/dist/build.js"></script>
-  </body>
+
+    <div class="container">
+      <div class="item" v-for="size in sizes" v-show="site">
+        <div class=" box">
+          <div class="">
+            width:
+            <input type="text" name="" value="" v-model="size.width">
+            <br /> height:
+            <input type="text" name="" value="" v-model="size.height">
+          </div>
+          <iframe :src="site" v-bind:width="size.width" v-bind:height="size.height"></iframe>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+  <script src="/dist/build.js"></script>
+</body>
+
 </html>

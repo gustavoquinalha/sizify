@@ -1,0 +1,16 @@
+.input {
+  background: #F6F8FA;
+  border: none;
+  border-radius: 3px;
+  font-size: 12px;
+  height: 30px;
+  width: 300px;
+  max-width: 90%;
+  color: #dfdfdf;
+  text-align: left;
+  padding-left: 10px;
+  outline: none
+}
+.input:focus {
+  background: #777777
+}

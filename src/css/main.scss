@@ -1,21 +1,5 @@
-* {
-  // background: blue
-}
+@import 'base/base';
+@import 'base/grid';
+@import 'base/input';
 
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-.container {
-  display: flex
-}
-.item {
-  margin: 10px;
-}
-iframe {
-  border: 1px solid #ababab;
-  overflow-x: hidden;
-}
+@import 'components/menu';
