@@ -10,6 +10,7 @@
   text-align: left;
   padding-left: 10px;
   outline: none;
+  -webkit-transition: .3s;
   transition: .3s
 }
 .input:focus {
@@ -30,6 +31,7 @@
   padding-left: 10px;
   outline: none;
   border: 1px solid #ddd;
+  -webkit-transition: .3s;
   transition: .3s
 
 }

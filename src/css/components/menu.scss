@@ -32,7 +32,8 @@ z-index: 999
   bottom: 0
 }
 .role {
-  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
   width: 100%;
   margin: 37px 0px 0px 0px;
 }
