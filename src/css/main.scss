@@ -4,3 +4,7 @@
 @import 'base/button';
 
 @import 'components/menu';
+
+[v-cloak] {
+  display: none
+}
