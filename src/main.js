@@ -5,7 +5,7 @@ new Vue({
   el: '#app',
   data () {
     return {
-      site: "dasdasd.csad",
+      site: null,
       scalep: 1,
       sizes: [
         {"id": 1, "type": "mobile", "name": "iPhone 4", "width": 320, "height": 480},
