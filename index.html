@@ -29,7 +29,7 @@
       </div>
     </div>
 
-    <div class="container" v-show="site" v-bind:style="{ zoom: scalep }">
+    <div class="container" v-show="site" v-bind:style="{ zoom: scalep }" v-cloak>
       <div v-for="size in sizes">
         <div class="item">
           <div class="box">
