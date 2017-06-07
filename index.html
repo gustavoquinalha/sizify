@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Vuew</title>
-  <link rel="stylesheet" href="/dist/app.css">
+  <link rel="stylesheet" href="./dist/app.css">
 </head>
 
 <body>
@@ -20,14 +20,51 @@
             <input @keyup.enter="keyUpShow" class="input" placeholder="http://github.com">
           </div>
           <div class="basis2 text-right">
-            <small>Links</small>
+            <!-- <small>Links</small> -->
+            <div v-if="site">
+              <input min="0.1" max="1" step="0.01" v-model="scalep" type="range"> {{scalep}}
+            </div>
           </div>
         </div>
       </div>
     </div>
 
+    <div class="container" v-show="site" v-bind:style="{ zoom: scalep }">
+      <div v-for="size in sizes">
+        <div class="item">
+          <div class="box">
+            <div class="box-header container center">
+              <div class="mg10">
+                <h2 v-text="size.name"></h2>
+                <strong><small>W</small></strong>
+                <input type="text" name="" class="input-number" v-model="size.width"> x
+                <strong><small>H</small></strong>
+                <input type="text" name="" class="input-number" v-model="size.height">
+              </div>
+            </div>
+            <div class="box-iframe">
+              <iframe :src="site" v-bind:width="size.width" v-bind:height="size.height"></iframe>
+            </div>
+          </div>
+          <div class="box-button">
+            <button type="submit" class="btn float-right width-100 mg10-r">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div v-if="!site" class="container center height-full-menu">
+      <div>
+        <h3>Your client is everywhere.</h3>
+  <img src="./src/assets/intro2.svg" width="500" alt="">
+      </div>
+
+    </div>
+
+    <!--
     <div class="container">
-      <div class="item" v-for="size in sizes" v-show="site">
+      <div class="" v-for="size in sizes" v-show="site">
         <div class=" box">
           <div class="">
             width:
@@ -38,14 +75,10 @@
           <iframe :src="site" v-bind:width="size.width" v-bind:height="size.height"></iframe>
         </div>
       </div>
-    </div>
-
-
-
-
+    </div> -->
 
   </div>
-  <script src="/dist/build.js"></script>
+  <script src="./dist/build.js"></script>
 </body>
 
 </html>

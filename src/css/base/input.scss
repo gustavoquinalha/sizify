@@ -9,8 +9,31 @@
   color: #dfdfdf;
   text-align: left;
   padding-left: 10px;
-  outline: none
+  outline: none;
+  transition: .3s
 }
 .input:focus {
   background: #777777
+}
+
+
+.input-number {
+  background: #ffffff;
+  border-radius: 3px;
+  font-size: 12px;
+  height: 20px;
+  width: 30px;
+  max-width: 90%;
+  color: #939393;
+  font-weight: 500;
+  text-align: left;
+  padding-left: 10px;
+  outline: none;
+  border: 1px solid #ddd;
+  transition: .3s
+
+}
+.input-number:focus {
+  background: #777777;
+  color: #F6F8FA
 }

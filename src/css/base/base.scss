@@ -4,11 +4,6 @@
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   text-align: center
 }
-iframe {
-  border: 1px solid #ababab;
-  overflow-x: hidden;
-  margin: 10px;
-}
 .size {
   width: 1140px;
   max-width: 90%
@@ -16,7 +11,33 @@ iframe {
 .margin {
   margin: 0 auto
 }
-
+.mg10 {
+  margin: 10px
+}
+.mg20 {
+  margin: 20px
+}
+.mg30 {
+  margin: 30px
+}
+.mg10-r {
+  margin-right: 10px
+}
+.pd10 {
+  padding: 10px
+}
+.pd20 {
+  padding: 20px
+}
+.pd30 {
+  padding: 30px
+}
+.float-left {
+  float: left
+}
+.float-right {
+  float: right
+}
 .text-left {
   text-align: left;
 }
@@ -25,4 +46,50 @@ iframe {
 }
 .text-right {
   text-align: right;
+}
+.width-full {
+  width: 100%
+}
+.height-full {
+  min-height: 100vh
+}
+.height-full-menu {
+  height: calc(100vh - 60px)
+}
+.width-100 {
+  width: 100px
+}
+.width-200 {
+  width: 200px
+}
+.width-300 {
+  width: 300px
+}
+
+
+
+
+
+
+
+
+.box {
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  overflow-x: hidden;
+  color: #828485
+}
+.item iframe {
+  border: none
+}
+.box-header {
+  background: #f4f4f4;
+  border-bottom: 1px solid #ddd;
+  height: 80px;
+}
+.box-header h2 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #24292E
 }
