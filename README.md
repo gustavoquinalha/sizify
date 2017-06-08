@@ -1,5 +1,7 @@
 # vuiew
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/gustavoquinalha/vuew.svg)](https://greenkeeper.io/)
+
 > A Vue.js project
 
 ## Build Setup
