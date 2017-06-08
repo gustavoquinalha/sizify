@@ -16,24 +16,7 @@ z-index: 999
 }
 
 
-
 .menu-left-rel {
-  width: 200px;
+  background: red;
   position: relative;
-}
-.menu-left {
-  background: #323639;
-  position: fixed;
-  width: 50px;
-  height: calc(100vh - 50px);
-  padding-top: 50px;
-  left: 0;
-  top: 0;
-  bottom: 0
-}
-.role {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-  width: 100%;
-  margin: 37px 0px 0px 0px;
 }
