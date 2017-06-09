@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width">
   <title>Vuew</title>
   <link rel="stylesheet" href="./dist/app.css">
 </head>
@@ -31,9 +32,9 @@
     </div> -->
 
 
-<div class="container" v-if="site" v-cloak>
+<div class="container">
 
-  <div class="basis2 menu-left-rel">
+  <div class="basis2 menu-left-rel hideMobile">
     <div class="container fixed">
       <div class="menu">vuew</div>
       <div class="sub-menu">
@@ -44,7 +45,7 @@
           </div>
           <div class="item-role">
             <label for="site">Size</label><br />
-              <input min="0.30" max="1" step="0.01" v-model="scalep" type="range">
+              <input min="0.50" max="1" step="0.01" v-model="scalep" type="range">
           </div>
         </div>
 
@@ -53,7 +54,21 @@
   </div>
 
 
-  <div class="flex basis10">
+  <div class="flex basis10" v-if="!site"  v-cloak>
+
+    <div v-if="!site" class="container center height-full-menu">
+      <div>
+        <h3>Your client is everywhere.</h3>
+        <img src="./src/assets/intro2.svg" class="intro" alt="">
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="flex basis10"  v-if="site" v-cloak>
+
+
     <div class="container" v-bind:style="{ zoom: scalep }">
       <div v-for="size in sizes">
         <div class="item">
@@ -88,13 +103,7 @@
 
 
 
-    <div v-if="!site" class="container center height-full-menu">
-      <div>
-        <h3>Your client is everywhere.</h3>
-        <img src="./src/assets/intro2.svg" class="intro" alt="">
-      </div>
 
-    </div>
 
 
 

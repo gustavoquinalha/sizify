@@ -59,3 +59,15 @@ z-index: 999
   font-weight: 700;
   font-size: 14px
 }
+
+
+@media only screen and (max-width: 400px) {
+  .hideMobile {
+    display: none
+  }
+}
+@media only screen and (max-width: 700px) {
+  .hideTablet {
+    display: none
+  }
+}
