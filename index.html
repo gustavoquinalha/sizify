@@ -11,27 +11,6 @@
 <body>
   <div id="app">
 
-    <!-- <div class="rel-menu">
-      <div class="menu">
-        <div class="menu-topo margin container align-center space-between">
-          <div class="basis2 text-left">
-            <strong>Vuew</strong>
-          </div>
-          <div class="flex">
-            <input @keyup.enter="keyUpShow" class="input" placeholder="http://github.com">
-          </div>
-          <div class="basis2 text-right">
-            <small>Links</small>
-            <div v-if="site" v-cloak>
-              <input min="0.50" max="1" step="0.01" v-model="scalep" type="range">
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-
 <div class="container">
 
   <div class="basis2 menu-left-rel hideMobile">
@@ -43,12 +22,11 @@
             <label for="site">Url</label>
               <input @keyup.enter="keyUpShow" id="site" name="site" class="input" placeholder="http://github.com" value="http://">
           </div>
-          <div class="item-role">
+          <div class="item-role" v-if="site" v-cloak>
             <label for="site">Size</label><br />
               <input min="0.50" max="1" step="0.01" v-model="scalep" type="range">
           </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -95,17 +73,6 @@
   </div>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
 
   </div>
   <script src="./dist/build.js"></script>
