@@ -4,12 +4,7 @@
 width: 100%;
 z-index: 999
 }
-.menu {
-  background: #24292E;
-  color: #dfdfdf;
-  position: fixed;
-  width: 100%
-}
+
 .menu-topo {
   height: 60px;
   width: 95%;
@@ -17,6 +12,50 @@ z-index: 999
 
 
 .menu-left-rel {
-  background: red;
+  color: #dfdfdf;
+  width: 320px;
+  min-width: 320px;
+  height: 100vh;
+  overflow: hidden;
   position: relative;
+}
+
+.menu {
+  background: #091E42;
+  color: #dfdfdf;
+  width: 70px;
+  height: 100vh;
+  padding-top: 20px
+
+}
+.sub-menu {
+  background: #EBECF0;
+  color: #6C798F;
+  width: 250px;
+  height: 100vh;
+  left: 50px;
+  padding-top: 20px
+}
+
+.hidden {
+  overflow: hidden;
+}
+.fixed {
+  position: fixed;
+}
+.role {
+
+}
+.item-role {
+  width: 90%;
+  margin: 0 auto;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.item-role:last-child {
+  margin-bottom: 0px;
+}
+.item-role label {
+  font-weight: 700;
+  font-size: 14px
 }
