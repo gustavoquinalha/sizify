@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width">
   <title>Vuew</title>
   <link rel="stylesheet" href="./dist/app.css">
 </head>
@@ -11,40 +10,36 @@
 <body>
   <div id="app">
 
-<div class="container">
-
-  <div class="basis2 menu-left-rel hideMobile">
-    <div class="container fixed">
-      <div class="menu">vuew</div>
-      <div class="sub-menu">
-        <div class="role">
-          <div class="item-role">
-            <label for="site">Url</label>
-              <input @keyup.enter="keyUpShow" id="site" name="site" class="input" placeholder="http://github.com" value="http://">
+    <div class="rel-menu">
+      <div class="menu">
+        <div class="menu-topo margin container align-center space-between">
+          <div class="basis2 text-left">
+            <strong>Vuew</strong>
           </div>
-          <div class="item-role" v-if="site" v-cloak>
-            <label for="site">Size</label><br />
+          <div class="flex">
+            <input @keyup.enter="keyUpShow" class="input" placeholder="http://github.com">
+          </div>
+          <div class="basis2 text-right">
+            <!-- <small>Links</small> -->
+            <div v-if="site" v-cloak>
               <input min="0.50" max="1" step="0.01" v-model="scalep" type="range">
+            </div>
+
           </div>
         </div>
       </div>
     </div>
-  </div>
 
 
-  <div class="flex basis10" v-if="!site"  v-cloak>
 
-    <div v-if="!site" class="container center height-full-menu">
-      <div>
-        <h3>Your client can be everywhere.</h3>
-        <img src="./src/assets/intro2.svg" class="intro" alt="">
-      </div>
+<div class="container" v-if="site" v-cloak>
 
-    </div>
-  </div>
+  <!-- <div class="basis-1 menu-left-rel pd20">
+  teste
+  </div> -->
 
 
-  <div class="flex basis10"  v-if="site" v-cloak>
+  <div class="basis5 flex12 conteudo">
 
 
     <div class="container" v-bind:style="{ zoom: scalep }">
@@ -70,9 +65,27 @@
         </div>
       </div>
     </div>
-  </div>
 
+
+  </div>
 </div>
+
+
+
+
+
+
+
+
+    <div v-if="!site" class="container center height-full-menu">
+      <div>
+        <h3>Your client is everywhere.</h3>
+        <img src="./src/assets/intro2.svg" class="intro" alt="">
+      </div>
+
+    </div>
+
+
 
   </div>
   <script src="./dist/build.js"></script>
