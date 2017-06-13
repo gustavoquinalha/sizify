@@ -34,12 +34,19 @@
 
 <div class="container" v-if="site" v-cloak>
 
-  <!-- <div class="basis-1 menu-left-rel pd20">
-  teste
-  </div> -->
+  <div class="basis5 flex menu-left-rel">
+    <div class="menu-lateral">
+<!-- <button v-on:click="sizeMobile">Teste</button> -->
+ </div>
+  </div>
 
 
-  <div class="basis5 flex12 conteudo">
+
+  <div class="basis5 flex conteudo">
+    <!-- <ul>
+  <li v-for="size in sizeMobile" v-text="size.name"></li>
+</ul> -->
+  <input type="text" v-model="query">
 
 
     <div class="container" v-bind:style="{ zoom: scalep }">

@@ -17,8 +17,19 @@ z-index: 999
 
 
 .menu-left-rel {
-  background: red;
   position: relative;
+  min-width: 90px;
+  height: 100%;
+}
+.menu-lateral {
+  background: #3b3d40;
+  color: #dfdfdf;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 60px;
+  width: 90px;
+
 }
 
 @media only screen and (max-width: 400px) {
@@ -30,4 +41,16 @@ z-index: 999
   .hideTablet {
     display: none
   }
+}
+
+
+.staggered-transition {
+    transition: all .5s ease;
+    overflow: hidden;
+    margin: 0;
+    height: 20px;
+}
+.staggered-enter, .staggered-leave {
+    opacity: 0;
+    height: 0;
 }
