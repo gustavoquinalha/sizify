@@ -16,24 +16,41 @@ z-index: 999
 }
 
 
-
 .menu-left-rel {
-  width: 200px;
   position: relative;
+  min-width: 90px;
+  height: 100%;
 }
-.menu-left {
-  background: #323639;
+.menu-lateral {
+  background: #3b3d40;
+  color: #dfdfdf;
+  height: 100%;
   position: fixed;
-  width: 50px;
-  height: calc(100vh - 50px);
-  padding-top: 50px;
   left: 0;
-  top: 0;
-  bottom: 0
+  top: 60px;
+  width: 90px;
+
 }
-.role {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-  width: 100%;
-  margin: 37px 0px 0px 0px;
+
+@media only screen and (max-width: 400px) {
+  .hideMobile {
+    display: none
+  }
+}
+@media only screen and (max-width: 700px) {
+  .hideTablet {
+    display: none
+  }
+}
+
+
+.staggered-transition {
+    transition: all .5s ease;
+    overflow: hidden;
+    margin: 0;
+    height: 20px;
+}
+.staggered-enter, .staggered-leave {
+    opacity: 0;
+    height: 0;
 }
