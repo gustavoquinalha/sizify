@@ -6,9 +6,15 @@ new Vue({
   data () {
     return {
       // site: null,
-      site: "teste.com",
+      site: "http://quinalha.me/",
       scalep: 1,
+      modalAdd: false,
       query: '',
+      id: '',
+      mobile: '',
+      name: '',
+      width: '',
+      height: '',
       sizes: [
         {id: 1, mobile: true, name: "iPhone 4", width: 320, height: 480},
         {id: 2, mobile: true, name: "iPhone 5", width: 320, height: 568},
@@ -35,5 +41,17 @@ new Vue({
       teste: function (event) {
       return this.sizes.filter(size => size.mobile);
     },
-    }
+    addSize: function() {
+      this.sizes.push({
+       width: this.width,
+       height: this.height
+     }),
+     this.width = ''
+     this.height = ''
+     this.modalAdd = false
+   },
+   toggleModal: function() {
+       this.modalAdd = !this.modalAdd
+     },
+  }
 });

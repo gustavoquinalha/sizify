@@ -99,3 +99,12 @@
   width: 500px;
   max-width: 90%
 }
+
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 99;
+  background: rgba(0,0,0,.6);
+}
