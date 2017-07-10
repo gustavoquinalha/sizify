@@ -17,6 +17,7 @@ new Vue({
       name: '',
       width: '380',
       height: '500',
+      tee: "vertical",
       sizes: [
         {id: 1, category: "mobile", teste: true, type: "apple", name: "iPhone 4", width: 320, height: 480},
         {id: 2, category: "mobile", teste: true, type: "apple", name: "iPhone 5", width: 320, height: 568},
@@ -35,9 +36,8 @@ new Vue({
 
   computed: {
     filteredItems: function () {
-                // console.log('filtered');
+      this.className = 'teste'
                 var result;
-
                 if  (this.filtratipo != 'all'){
                     var filtratipo = this.filtratipo
                     result = this.sizes.filter(function (a) {
@@ -66,7 +66,16 @@ new Vue({
           a.width = virah
           a.height = viraw
           // console.log(viraw, virah)
+
       });
+      var v = "vertical"
+      var h = "horizontal"
+      if (this.tee == "vertical") {
+        this.tee = h
+      } else {
+        this.tee = v
+      }
+
     },
 
       keyUpShow: function (event) {

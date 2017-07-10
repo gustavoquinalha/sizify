@@ -1,6 +1,6 @@
 .rel-menu {
   position: relative;
-  height: 60px;
+  min-height: 60px;
 width: 100%;
 z-index: 999
 }
@@ -52,4 +52,8 @@ z-index: 999
 .staggered-enter, .staggered-leave {
     opacity: 0;
     height: 0;
+}
+.menu2 {
+  padding-top: 10px;
+  padding-bottom: 10px
 }
