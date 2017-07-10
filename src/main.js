@@ -6,35 +6,69 @@ new Vue({
   data () {
     return {
       // site: null,
-      site: "http://quinalha.me/",
+      site: "http://",
+      tags: 'apple',
+      categ: 'mobile',
       scalep: 1,
       modalAdd: false,
       query: '',
       id: '',
       mobile: '',
       name: '',
-      width: '',
-      height: '',
+      width: '380',
+      height: '500',
       sizes: [
-        {id: 1, mobile: true, name: "iPhone 4", width: 320, height: 480},
-        {id: 2, mobile: true, name: "iPhone 5", width: 320, height: 568},
-        {id: 3, mobile: true, name: "Galaxy S4", width: 360, height: 640},
-        {id: 4, mobile: true, name: "iPhone 6", width: 375, height: 667},
-        {id: 5, mobile: true, name: "iPhone 7 Plus", width: 414, height: 736},
-        {id: 6, mobile: false, name: "Nexus 7", width: 600, height: 960},
-        {id: 7, mobile: false, name: "iPad Air", width: 768, height: 1024}
+        {id: 1, category: "mobile", teste: true, type: "apple", name: "iPhone 4", width: 320, height: 480},
+        {id: 2, category: "mobile", teste: true, type: "apple", name: "iPhone 5", width: 320, height: 568},
+        {id: 3, category: "mobile", teste: true, type: "android", name: "Galaxy S4", width: 360, height: 640},
+        {id: 4, category: "mobile", teste: true, type: "apple", name: "iPhone 6", width: 375, height: 667},
+        {id: 5, category: "mobile", teste: true, type: "apple", name: "iPhone 7 Plus", width: 414, height: 736},
+        {id: 6, category: "tablet", teste: true, type: "android", name: "Nexus 7", width: 600, height: 960},
+        {id: 7, category: "tablet", teste: true, type: "apple", name: "iPad Air", width: 768, height: 1024}
       ],
-      sizeMobile: false
+      sizeMobile: false,
+      title: 'Colored filter',
+
+        filtratipo: 'all'
     };
   },
 
-  // computed: {
-  //   sizeMobile(){
-  //     return this.sizes.filter(size => size.mobile);
-  //   }
-  // },
+  computed: {
+    filteredItems: function () {
+                // console.log('filtered');
+                var result;
+
+                if  (this.filtratipo != 'all'){
+                    var filtratipo = this.filtratipo
+                    result = this.sizes.filter(function (a) {
+                        return a.category == filtratipo
+                    });
+
+                } else {
+                    result =  this.sizes;
+                }
+
+                return result;
+            },
+
+    },
 
   methods: {
+    revert: function (event) {
+      this.sizes.filter(function (a) {
+          // console.log(a.name, a.width, a.height)
+          var recebeW = a.width
+          var recebeH = a.height
+
+          var viraw = recebeW
+          var virah = recebeH
+
+          a.width = virah
+          a.height = viraw
+          // console.log(viraw, virah)
+      });
+    },
+
       keyUpShow: function (event) {
       this.site = event.target.value
     },
@@ -44,7 +78,9 @@ new Vue({
     addSize: function() {
       this.sizes.push({
        width: this.width,
-       height: this.height
+       height: this.height,
+       category: "default",
+       name: "default"
      }),
      this.width = ''
      this.height = ''

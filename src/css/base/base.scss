@@ -4,7 +4,9 @@
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   text-align: center
 }
-
+body, html {
+  height: 100%
+}
 .size {
   width: 1140px;
   max-width: 90%
@@ -78,7 +80,7 @@
   margin: 10px;
   border: 1px solid #ddd;
   border-radius: 3px;
-  overflow-x: hidden;
+  // overflow-x: hidden;
   color: #828485
 }
 .item iframe {
@@ -106,5 +108,38 @@
   height: 100vh;
   position: fixed;
   z-index: 99;
-  background: rgba(0,0,0,.6);
+  background: rgba(0,0,0,.3);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.modal-style {
+  background: #fff;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 1px 1px 10px rgba(0,0,0,.2);
+  border-radius: 4px;
+  border:1px solid #ddd;
+  height: auto;
+  margin-top: 30px
+
+}
+.modal-header {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: #f4f4f4;
+  border-bottom:1px solid #ddd;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.modal-content {
+  padding: 30px;
+}
+.modal-buttons {
+  margin-bottom: 45px;
+}
+.role {
+  // height: calc(100vh - 60px)
 }
