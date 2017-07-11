@@ -13,6 +13,7 @@ outline: none;
 white-space: nowrap;
 vertical-align: middle;
 cursor: pointer;
+
 }
 .btn:hover {
 background-color: #22953c;
@@ -31,4 +32,59 @@ background-image: linear-gradient(-180deg, #2bb44b 0%, #22953c 90%);
   background-image: linear-gradient(-180deg, #f0f3f6 0%, #e6ebf1 90%);
   background-position: 0 -0.5em;
   border-color: rgba(27,31,35,0.35);
+}
+.menu-lateral ul {
+  display: flex;
+  flex-direction: column;
+}
+.menu-lateral ul button {
+  width: calc(100% - 20px);
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+
+
+
+.img-check div label:first-child {
+  padding: 6px 8px!important;
+  display: none
+}
+
+.img-check input[type="radio"] {
+  display: none
+}
+.img-check input[type="radio"] + label {
+font-weight: 500;
+font-size: 14px;
+line-height: 40px;
+border: 1px solid rgba(27,31,35,0.2);
+border-radius: 0.25em;
+color: #24292e;
+background-color: #eff3f6;
+background-image: -webkit-linear-gradient(270deg, #fafbfc 0%, #eff3f6 90%);
+background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
+outline: none;
+white-space: nowrap;
+vertical-align: middle;
+cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 50px;
+margin-left: 10px;
+margin-right: 10px;
+margin-bottom: 10px;
+height: 40px
+}
+.img-check input[type="radio"] + label:first-child {
+  display: none
+
+}
+.img-check input[type="radio"]:checked + label {
+color: #fff;
+background-color: #28a745;
+background-image: -webkit-gradient(linear, left top, left bottom, from(#34d058), color-stop(90%, #28a745));
+background-image: linear-gradient(-180deg, #34d058 0%, #28a745 90%);
 }

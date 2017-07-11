@@ -6,9 +6,10 @@ new Vue({
   data () {
     return {
       // site: null,
-      site: "http://quinalha.me",
+      site: "http://",
+      sizee: "all",
       tags: 'apple',
-      wrapp: 'wrap',
+      wrapp: 'nowrap',
       categ: 'mobile',
       scalep: 1,
       scala: 1,
