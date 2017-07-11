@@ -8,6 +8,7 @@ new Vue({
       // site: null,
       site: "http://",
       tags: 'apple',
+      wrapp: 'wrap',
       categ: 'mobile',
       scalep: 1,
       modalAdd: false,

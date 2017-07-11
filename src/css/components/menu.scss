@@ -16,10 +16,12 @@ z-index: 999
 }
 
 
-.menu-left-rel {
+.menu-lateral-rel {
   position: relative;
-  min-width: 90px;
-  height: 100%;
+  background: red;
+  margin-right: 10px;
+  min-width: 70px;
+  flex-basis: 70px;
 }
 .menu-lateral {
   background: #3b3d40;
@@ -27,8 +29,7 @@ z-index: 999
   height: 100%;
   position: fixed;
   left: 0;
-  top: 60px;
-  width: 90px;
+  margin-right: 10px
 }
 
 @media only screen and (max-width: 400px) {
