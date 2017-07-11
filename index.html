@@ -17,11 +17,11 @@
         <div class="menu-topo margin container align-center space-between">
           <div class=" text-left">
             <strong><a href="./">
-              <img src="./src/assets/logo-01.svg" width="80" alt="">
+              <img src="./src/assets/logo-01.svg" class="logo" alt="">
             </a></strong>
           </div>
           <div class="">
-            <input @keyup.enter="keyUpShow" class="input" placeholder="http://github.com">
+            <input @keyup.enter="keyUpShow" class="input" placeholder="http://github.com" v-model="site">
           </div>
           <!-- <div class="basis1 text-right container">
             <div>
@@ -35,7 +35,6 @@
         </div>
       </div>
     </div>
-
     <!-- <div class="menu2 container space-around align-center width-full" v-if="site" v-cloak>
         <div class="flex">
           <input min="0.50" max="1" step="0.01" v-model="scalep" type="range">
@@ -80,16 +79,17 @@
     <div class="container role"  v-if="site" v-cloak>
       <div class="menu-lateral-rel">
         <div class="menu-lateral">
-          <button type="submit" class="btn" @click="toggleModal">+</button>
-          <ul>
+
+          <ul class="btns">
+            <li><button type="submit" class="btn" @click="toggleModal">+</button></li>
             <li>
-              <button class="btn btn-o" @click="filtratipo = 'all'">All</button>
+              <button class="btn btn-o" @click="filtratipo = 'all'"><img src="./src/assets/2.svg" width="20" alt=""></button>
             </li>
             <li>
-              <button class="btn btn-o" @click="filtratipo = 'mobile'">mobile</button>
+              <button class="btn btn-o" @click="filtratipo = 'mobile'"><img src="./src/assets/phone.svg" width="20" alt=""></button>
             </li>
             <li>
-              <button class="btn btn-o" @click="filtratipo = 'tablet'">tablet</button>
+              <button class="btn btn-o" @click="filtratipo = 'tablet'"><img src="./src/assets/tablet.svg" width="20" alt=""></button>
             </li>
             <li>
               <button class="btn btn-o" @click="filtratipo = 'default'">meus</button>
@@ -97,7 +97,7 @@
           </ul>
           <ul>
             <li>
-              <button class="btn btn-o" @click="revert">{{tee}}</button>
+              <button class="btn btn-o" @click="revert"><img src="./src/assets/rota.svg" width="20" alt=""></button>
             </li>
           </ul>
           <ul>
@@ -106,29 +106,35 @@
             <li>
               <input type="radio" v-model="wrapp" value="nowrap"> no-wrap</li>
           </ul>
+          <ul>
+            <li><input type="radio" v-model="scala" value="1">100%</li>
+            <li><input type="radio" v-model="scala" value="0.75">75%</li>
+            <li><input type="radio" v-model="scala" value="0.50">50%</li>
+          </ul>
         </div>
       </div>
-    <div class="container" v-bind:style="{ flexWrap: wrapp }">
-      <div class="item" v-for="size in filteredItems" v-bind:style="{ scale: scalep }">
+    <div class="container" v-bind:style="{ flexWrap: wrapp }" >
+      <div class="item" v-for="size in filteredItems" v-bind:style="{ zoom: scala }">
 
-        <div>
-          <div class="box">
-            <div class="box-header container center">
-              <div class="mg10">
-                <h2 v-text="size.name"></h2>
-                <strong><small>W</small></strong>
-                <input type="text" name="" class="input-number" v-model="size.width"> x
-                <strong><small>H</small></strong>
-                <input type="text" name="" class="input-number" v-model="size.height">
+        <!-- <div id="muda"> -->
+          <!-- <div v-bind:style=" 'transform: scale(' + scala + ')' "> -->
+            <div class="box">
+              <div class="box-header container center">
+                <div class="mg10">
+                  <h2 v-text="size.name"></h2>
+                  <strong><small>W</small></strong>
+                  <input type="text" name="" class="input-number" v-model="size.width"> x
+                  <strong><small>H</small></strong>
+                  <input type="text" name="" class="input-number" v-model="size.height">
+                </div>
+              </div>
+              <div class="box-iframe">
+                <iframe :src="site" v-bind:width="size.width" v-bind:height="size.height" v-bind:style="{ zoom: scala }"></iframe>
               </div>
             </div>
-            <div class="box-iframe">
-              <iframe :src="site" v-bind:width="size.width" v-bind:height="size.height" v-bind:style="{ scale: scalep }"></iframe>
+            <div class="box-button">
+              <button type="submit" class="btn float-right width-100 mg10-r">Save</button>
             </div>
-          </div>
-          <div class="box-button">
-            <button type="submit" class="btn float-right width-100 mg10-r">Save</button>
-          </div>
         </div>
 
       </div>
@@ -137,12 +143,12 @@
 
     </div>
 
-    <div v-if="!site" class="container center height-full-menu">
+    <!-- <div v-if="!site" class="container center height-full-menu">
       <div>
         <h3>Your client is everywhere.</h3>
         <img src="./src/assets/intro2.svg" class="intro" alt="">
       </div>
-    </div>
+    </div> -->
 
 
   </div>

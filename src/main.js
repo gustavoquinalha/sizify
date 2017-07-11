@@ -6,11 +6,12 @@ new Vue({
   data () {
     return {
       // site: null,
-      site: "http://",
+      site: "http://quinalha.me",
       tags: 'apple',
       wrapp: 'wrap',
       categ: 'mobile',
       scalep: 1,
+      scala: 1,
       modalAdd: false,
       query: '',
       id: '',
