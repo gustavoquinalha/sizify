@@ -204,3 +204,16 @@ hr {
 .close:hover {
   opacity: .8!important
 }
+.qrcode {
+  position: relative;
+}
+.qrcode::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: rgb(80, 250, 123);
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  right: 20px
+}
