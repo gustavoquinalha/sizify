@@ -99,6 +99,22 @@ body, html {
   margin-bottom: 5px;
   color: #24292E
 }
+.box-iframe {
+  position: relative;
+}
+.teclado {
+  height: auto;
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+}
+.teclado img {
+  width: 100%;
+  max-height: 50%;
+}
+
+
+
 
 .intro {
   width: 500px;

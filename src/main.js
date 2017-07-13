@@ -14,6 +14,7 @@ new Vue({
       scalep: 1,
       scala: 1,
       modalAdd: false,
+      modalTeclado: false,
       query: '',
       id: '',
       mobile: '',
@@ -100,6 +101,9 @@ new Vue({
    },
    toggleModal: function() {
        this.modalAdd = !this.modalAdd
+     },
+   toggleModalTeclado: function() {
+       this.modalTeclado = !this.modalTeclado
      },
   }
 });
