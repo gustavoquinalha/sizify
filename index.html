@@ -85,25 +85,10 @@
             <li>
               <button type="submit" class="btn" @click="toggleModal">+</button>
             </li>
-            <!-- <li>
-              <button class="btn btn-o" @click="filtratipo = 'all'"><img src="./src/assets/2.svg" width="20" alt=""></button>
-            </li> -->
-            <!-- <li>
-              <button class="btn btn-o" @click="filtratipo = 'mobile'"><img src="./src/assets/phone.svg" width="20" alt=""></button>
-            </li>
-            <li>
-              <button class="btn btn-o" @click="filtratipo = 'tablet'"><img src="./src/assets/tablet.svg" width="20" alt=""></button>
-            </li> -->
-            <!-- <li>
-              <button class="btn btn-o" @click="filtratipo = 'default'"><img src="./src/assets/resize.svg" width="20" alt=""></button>
-            </li> -->
-
-            <li>
-              <button class="btn btn-o" @click="revert"><img src="./src/assets/rota.svg" width="20" alt=""></button>
-            </li>
           </ul>
 
-<hr>
+          <hr>
+
 
 
 
@@ -112,37 +97,47 @@
             <div class="">
               <input type="radio" id="t" name="filtraT" v-model="sizee" value="all">
               <label for="t" @click="filtratipo = 'all'">
-                <img src="./src/assets/2.svg"  value="tablet" width="20" alt="" >
+                <img src="./src/assets/2.svg" value="tablet" width="20" alt="">
               </label>
             </div>
 
             <div class="">
               <input type="radio" id="ttte" name="filtraT" v-model="sizee" value="tablet">
               <label for="ttte" @click="filtratipo = 'tablet'">
-                <img src="./src/assets/tablet.svg"  value="tablet" width="20" alt="" >
+                <img src="./src/assets/tablet.svg" value="tablet" width="20" alt="">
               </label>
             </div>
 
             <div class="">
               <input type="radio" id="tte" name="filtraT" v-model="sizee" value="mobile">
               <label for="tte" @click="filtratipo = 'mobile'">
-                <img src="./src/assets/phone.svg" value="mobile" width="20" alt="" >
+                <img src="./src/assets/phone.svg" value="mobile" width="20" alt="">
               </label>
             </div>
 
             <div class="">
               <input type="radio" id="te" name="filtraT" v-model="sizee" value="default">
               <label for="te" @click="filtratipo = 'default'">
-                <img src="./src/assets/resize.svg" value="mobile" width="20" alt="" >
+                <img src="./src/assets/resize.svg" value="mobile" width="20" alt="">
               </label>
             </div>
 
 
           </div>
 
-<hr>
+          <hr>
 
+          <div class="img-check">
 
+            <div class="">
+              <input type="radio" id="revert" name="reverter">
+              <label for="revert" @click="revert">
+                <img src="./src/assets/rota.svg" value="tablet" width="20" alt="">
+              </label>
+            </div>
+          </div>
+
+          <hr>
 
 
 
@@ -159,7 +154,7 @@
               </label>
             </div>
             <div class="">
-            <input type="radio" v-model="wrapp" value="wrap" id="wrapp">
+              <input type="radio" v-model="wrapp" value="wrap" id="wrapp">
               <label for="wrapp">
                 <img src="./src/assets/block.svg" width="20" alt="">
               </label>
@@ -167,19 +162,21 @@
 
           </div>
 
+          <hr>
+
 
           <div class="img-check">
             <div class="basis1 flex">
               <input type="radio" v-model="scala" value="1" id="100">
-              <label for="100">100%</label>
+              <label for="100"><small>100%</small></label>
             </div>
             <div class="basis1 flex">
               <input type="radio" v-model="scala" value="0.75" id="75">
-              <label for="75">75%</label>
+              <label for="75"><small>75%</small></label>
             </div>
             <div class="basis1 flex">
               <input type="radio" v-model="scala" value="0.50" id="50">
-              <label for="50">50%</label>
+              <label for="50"><small>50%</small></label>
             </div>
           </div>
 

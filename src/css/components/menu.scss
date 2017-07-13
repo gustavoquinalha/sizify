@@ -5,7 +5,7 @@ width: 100%;
 z-index: 999
 }
 .menu {
-  background: #24292E;
+  background: #21222C;
   color: #dfdfdf;
   position: fixed;
   width: 100%
@@ -18,14 +18,15 @@ z-index: 999
 
 .menu-lateral-rel {
   position: relative;
-  background: red;
+  background: #1b0b40;
   margin-right: 10px;
   min-width: 70px;
   flex-basis: 70px;
 }
 .menu-lateral {
-  background: #3b3d40;
-  color: #dfdfdf;
+  background: #282A36;
+  border-right: 1px solid #21222C;
+  color: #fff;
   height: 100%;
   position: fixed;
   left: 0;

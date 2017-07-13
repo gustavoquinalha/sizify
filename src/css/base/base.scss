@@ -153,7 +153,26 @@ body, html {
 
 hr {
   margin-bottom: 10px;
-  height: 2px;
+  height: 1px;
   border: none;
-  background: rgb(56, 53, 61)
+  background: rgba(255, 255, 255, .1)
+}
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #21222C;
+}
+
+::-webkit-scrollbar
+{
+	width: 10px;
+	height: 10px;
+	background-color: red;
+}
+
+::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #404149;
 }
