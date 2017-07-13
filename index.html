@@ -30,6 +30,23 @@
     </div>
 
 
+     <div v-show="modalQrCode" v-cloak>
+       <div class="modal" >
+         <div class="modal-style">
+           <div class="modal-header">
+             <div>
+               <h2>QR-CODE</h2></div>
+             <div @click="toggleModalQrCode">
+               <h2>x</h2>
+             </div>
+           </div>
+           <br />
+           <qrcode-vue :value="site" :size="size" :background="background" level="H"></qrcode-vue>
+           <br />
+         </div>
+       </div>
+     </div>
+
     <div v-show="modalAdd" v-cloak>
       <div class="modal">
         <div class="modal-style">
@@ -63,6 +80,7 @@
             <li>
               <button type="submit" class="btn" @click="toggleModal">+</button>
             </li>
+
           </ul>
 
           <hr>
@@ -107,19 +125,16 @@
 
           <div class="img-check">
 
-            <div class="">
-              <input type="radio" id="revert" name="reverter">
-              <label for="revert" @click="revert">
-                <img src="./src/assets/rota.svg" value="tablet" width="20" alt="">
-              </label>
-            </div>
 
-            <div class="">
-              <input type="radio" id="teclado" name="teclado">
-              <label for="teclado" @click="toggleModalTeclado">
-                <img src="./src/assets/keyboard.svg" value="tablet" width="20" alt="">
-              </label>
-            </div>
+          <div @click="revert" class="cursor">
+              <img :src="tee" alt="" width="20">
+          </div>
+
+          <div @click="toggleModalTeclado" class="cursor">
+            <img src="./src/assets/keyboard.svg" value="tablet" width="20" alt="" :class="ttst">
+          </div>
+
+
 
           </div>
 
@@ -166,6 +181,19 @@
             </div>
           </div>
 
+          <hr>
+
+          <div class="img-check">
+            <div @click="toggleModalQrCode" class="cursor">
+              <img src="./src/assets/qr-code.svg" value="tablet" width="20" alt="" :class="mqrcode">
+            </div>
+
+              <!-- <button type="submit" class="btn" @click="toggleModalQrCode">QR</button> -->
+
+
+
+          </div>
+
 
         </div>
       </div>
@@ -196,9 +224,9 @@
               <iframe :src="site" v-bind:width="size.width" v-bind:height="size.height" v-bind:style="{ zoom: scala }"></iframe>
             </div>
           </div>
-          <div class="box-button">
+          <!-- <div class="box-button">
             <button type="submit" class="btn float-right width-100 mg10-r">Save</button>
-          </div>
+          </div> -->
         </div>
 
       </div>

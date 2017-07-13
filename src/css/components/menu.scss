@@ -34,7 +34,9 @@ z-index: 999
   margin-right: 10px;
   z-index: 999
 }
-
+.cursor {
+  cursor: pointer;
+}
 @media only screen and (max-width: 400px) {
   .hideMobile {
     display: none

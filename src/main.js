@@ -1,11 +1,18 @@
 import Vue from 'vue';
+import QrcodeVue from 'qrcode.vue';
 
 new Vue({
+  components: {
+    QrcodeVue
+  },
+
   el: '#app',
 
   data () {
     return {
-      // site: null,
+      size: '200',
+      background: '#fff',
+      foreground: '#000',
       site: "http://",
       sizee: "all",
       tags: 'apple',
@@ -15,13 +22,16 @@ new Vue({
       scala: 1,
       modalAdd: false,
       modalTeclado: false,
+      modalQrCode: false,
       query: '',
       id: '',
       mobile: '',
       name: '',
       width: '380',
       height: '500',
-      tee: "vertical",
+      tee: 'src/assets/phone.svg',
+      ttst: 'close',
+      mqrcode: 'close',
       sizes: [
         {id: 1, category: "mobile", teste: true, type: "apple", name: "iPhone 4", width: 320, height: 480},
         {id: 2, category: "mobile", teste: true, type: "apple", name: "iPhone 5", width: 320, height: 568},
@@ -72,9 +82,9 @@ new Vue({
           // console.log(viraw, virah)
 
       });
-      var v = "vertical"
-      var h = "horizontal"
-      if (this.tee == "vertical") {
+      var v = "src/assets/phone.svg"
+      var h = "src/assets/phone2.svg"
+      if (this.tee == v) {
         this.tee = h
       } else {
         this.tee = v
@@ -100,10 +110,34 @@ new Vue({
      this.modalAdd = false
    },
    toggleModal: function() {
-       this.modalAdd = !this.modalAdd
+     this.modalAdd = !this.modalAdd
+     this.modalQrCode = false
      },
    toggleModalTeclado: function() {
-       this.modalTeclado = !this.modalTeclado
+       var open = "open"
+       var close = "close"
+
+       this.modalTeclado = !this.modalTeclado;
+
+       
+       if (this.ttst == open) {
+         this.ttst = close
+       } else {
+         this.ttst = open
+       }
+
+    },
+   toggleModalQrCode: function() {
+       this.modalQrCode = !this.modalQrCode
+       this.modalAdd = false
+
+       var open = "open"
+       var close = "close"
+       if (this.mqrcode == open) {
+         this.mqrcode = close
+       } else {
+         this.mqrcode = open
+       }
      },
   }
 });
