@@ -14,7 +14,22 @@ z-index: 9999
   height: 60px;
   width: 95%;
 }
+.git {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.git img {
+  padding-right: 10px
+}
 
+.gitlink img {
+  opacity: .5;
+  transition: .3s
+}
+.gitlink:hover img {
+  opacity: 1
+}
 
 .menu-lateral-rel {
   position: relative;

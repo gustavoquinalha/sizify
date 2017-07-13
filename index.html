@@ -21,8 +21,12 @@
               <img src="./src/assets/logo-01.svg" class="logo" alt="">
             </a></strong>
           </div>
-          <div class="">
-            <input @keyup.enter="keyUpShow" class="input" placeholder="http://github.com" v-model="site">
+          <div>
+            <a class="gitlink" href="https://github.com/gustavoquinalha/vuew" target="_blank">
+            <div class="git">
+                <img src="./src/assets/github.svg" value="tablet" width="25" alt=""><input @keyup.enter="keyUpShow" class="input" placeholder="http://github.com" v-model="site">
+            </div>
+          </a>
           </div>
 
         </div>
@@ -37,7 +41,7 @@
              <div>
                <h2>QR-CODE</h2></div>
              <div @click="toggleModalQrCode">
-               <h2>x</h2>
+               <h2 class="cursor">x</h2>
              </div>
            </div>
            <br />
@@ -54,7 +58,7 @@
             <div>
               <h2>Novo size</h2></div>
             <div @click="toggleModal">
-              <h2>x</h2></div>
+              <h2 class="cursor">x</h2></div>
           </div>
           <div class="modal-content">
             <div class="mg10">
