@@ -4,15 +4,45 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vuew</title>
+  <title>Sizify</title>
   <link rel="stylesheet" href="./dist/app.css">
+
+  <!-- SEO -->
+  <meta name="description" content="A tool for preview changes and test on multiple devices instantly." />
+  <meta name="author" content="Gustavo Quinalha" />
+  <link rel="base" href="http://quinalha.me/sizify" />
+  <link rel="canonical" href="http://quinalha.me/sizify" />
+  <meta rel="sitemap" type="application/xml" content="http://quinalha.me/sizify/sitemap.xml" />
+  <meta name="robots" content="index/follow" />
+  <meta name="googlebot" content="index/follow" />
+  <meta name="theme-color" content="#21222C" />
+  <meta name="msapplication-navbutton-color" content="#21222C" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="#21222C" />
+  <!-- Schema.org markup for Google+ -->
+  <meta itemprop="name" content="Sizify" />
+  <meta itemprop="description" content="A tool for preview changes and test on multiple devices instantly." />
+  <meta itemprop="image" content="http://quinalha.me/sizify/src/assets/intro.png" />
+  <!-- markup for facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sizify" />
+  <meta property="og:url" content="http://quinalha.me/sizify" />
+  <meta property="og:site_name" content="Sizify" />
+  <meta property="og:image" content="http://quinalha.me/sizify/src/assets/intro.png" />
+  <meta property="og:description" content="A tool for preview changes and test on multiple devices instantly." />
+  <meta property="og:locale" content="pt_Br" />
+  <meta property="fb:app_id" content="app_id" />
+  <meta property="fb:admins" content="fb-admin" />
+  <!-- markup for twitter -->
+  <meta name="twitter:card" content="Product" />
+  <meta name="twitter:title" content="Sizify" />
+  <meta name="twitter:description" content="A tool for preview changes and test on multiple devices instantly." />
+  <meta name="twitter:creator" content="Gustavo Quinalha" />
+  <meta name="twitter:image" content="http://quinalha.me/sizify/src/assets/intro.png" />
+  <!-- SEO -->
 </head>
 
 <body>
   <div id="app">
-
-
-
     <div class="rel-menu">
       <div class="menu">
         <div class="menu-topo margin container align-center space-between">
@@ -22,34 +52,33 @@
             </a></strong>
           </div>
           <div>
-            <a class="gitlink" href="https://github.com/gustavoquinalha/vuew" target="_blank">
-            <div class="git">
-                <img src="./src/assets/github.svg" value="tablet" width="25" alt=""><input @keyup.enter="keyUpShow" class="input" placeholder="http://github.com" v-model="site">
-            </div>
-          </a>
+              <div class="git">
+                <a class="gitlink" href="https://github.com/gustavoquinalha/vuew" target="_blank">
+                <img src="./src/assets/github.svg" value="tablet" width="25" alt="">
+              </a>
+                <input @keyup.enter="keyUpShow" class="input" placeholder="http://github.com" v-model="site">
+              </div>
           </div>
-
         </div>
       </div>
     </div>
 
-
-     <div v-show="modalQrCode" v-cloak>
-       <div class="modal" >
-         <div class="modal-style">
-           <div class="modal-header">
-             <div>
-               <h2>QR-CODE</h2></div>
-             <div @click="toggleModalQrCode">
-               <h2 class="cursor">x</h2>
-             </div>
-           </div>
-           <br />
-           <qrcode-vue :value="site" :size="size" :background="background" level="H"></qrcode-vue>
-           <br />
-         </div>
-       </div>
-     </div>
+    <div v-show="modalQrCode" v-cloak>
+      <div class="modal">
+        <div class="modal-style">
+          <div class="modal-header">
+            <div>
+              <h2>QR-CODE</h2></div>
+            <div @click="toggleModalQrCode">
+              <h2 class="cursor">x</h2>
+            </div>
+          </div>
+          <br />
+          <qrcode-vue :value="site" :size="size" :background="background" level="H"></qrcode-vue>
+          <br />
+        </div>
+      </div>
+    </div>
 
     <div v-show="modalAdd" v-cloak>
       <div class="modal">
@@ -75,8 +104,6 @@
       </div>
     </div>
 
-
-
     <div class="container role" v-if="site" v-cloak>
       <div class="menu-lateral-rel">
         <div class="menu-lateral">
@@ -84,72 +111,49 @@
             <li>
               <button type="submit" class="btn" @click="toggleModal">+</button>
             </li>
-
           </ul>
 
           <hr>
 
-
-
-
           <div class="img-check">
-
             <div class="">
               <input type="radio" id="t" name="filtraT" v-model="sizee" value="all">
               <label for="t" @click="filtratipo = 'all'">
                 <img src="./src/assets/2.svg" value="tablet" width="25" alt="">
               </label>
             </div>
-
             <div class="">
               <input type="radio" id="ttte" name="filtraT" v-model="sizee" value="tablet">
               <label for="ttte" @click="filtratipo = 'tablet'">
                 <img src="./src/assets/tablet.svg" value="tablet" width="20" alt="">
               </label>
             </div>
-
             <div class="">
               <input type="radio" id="tte" name="filtraT" v-model="sizee" value="mobile">
               <label for="tte" @click="filtratipo = 'mobile'">
                 <img src="./src/assets/phone.svg" value="mobile" width="20" alt="">
               </label>
             </div>
-
             <div class="">
               <input type="radio" id="te" name="filtraT" v-model="sizee" value="default">
               <label for="te" @click="filtratipo = 'default'">
                 <img src="./src/assets/resize.svg" value="mobile" width="20" alt="">
               </label>
             </div>
-
-
           </div>
 
           <hr>
 
           <div class="img-check">
-
-
-          <div @click="revert" class="cursor">
+            <div @click="revert" class="cursor">
               <img :src="tee" alt="" width="20">
-          </div>
-
-          <div @click="toggleModalTeclado" class="cursor">
-            <img src="./src/assets/keyboard.svg" value="tablet" width="20" alt="" :class="ttst">
-          </div>
-
-
-
+            </div>
+            <div @click="toggleModalTeclado" class="cursor">
+              <img src="./src/assets/keyboard.svg" value="tablet" width="20" alt="" :class="ttst">
+            </div>
           </div>
 
           <hr>
-
-
-
-
-
-
-
 
           <div class="img-check">
             <div class="">
@@ -164,11 +168,9 @@
                 <img src="./src/assets/block.svg" width="20" alt="">
               </label>
             </div>
-
           </div>
 
           <hr>
-
 
           <div class="img-check">
             <div class="basis1 flex">
@@ -192,20 +194,14 @@
               <img src="./src/assets/qr-code.svg" value="tablet" width="20" alt="" :class="mqrcode">
             </div>
           </div>
-
-
         </div>
       </div>
-      <div class="container" v-bind:style="{ flexWrap: wrapp }">
 
+      <div class="container" v-bind:style="{ flexWrap: wrapp }">
         <div v-if="filtratipo == 'default'" class="novo">
           <button class="btn" @click="toggleModal">+ Novo size</button>
         </div>
-
         <div class="item" v-for="size in filteredItems" v-bind:style="{ zoom: scala }">
-
-          <!-- <div id="muda"> -->
-          <!-- <div v-bind:style=" 'transform: scale(' + scala + ')' "> -->
           <div class="box">
             <div class="box-header container center">
               <div class="mg10">
@@ -218,7 +214,7 @@
             </div>
             <div class="box-iframe">
               <div class="teclado" v-show="modalTeclado">
-<img src="./src/assets/teclado.png" alt="">
+                <img src="./src/assets/teclado.png" alt="">
               </div>
               <iframe :src="site" v-bind:width="size.width" v-bind:height="size.height" v-bind:style="{ zoom: scala }"></iframe>
             </div>
@@ -227,10 +223,9 @@
             <button type="submit" class="btn float-right width-100 mg10-r">Save</button>
           </div> -->
         </div>
-
       </div>
-    </div>
 
+    </div>
 
   </div>
 
@@ -241,10 +236,12 @@
       </div>
     </div> -->
 
-
   </div>
 
   <script src="./dist/build.js"></script>
+  <script type="application/ld+json">
+{"@context":"http://www.schema.org","@type":"website","name":"Sizify","url":"http://quinalha.me/sizify","alternateName":"Sizify"}
+</script>
 </body>
 
 </html>
