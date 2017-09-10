@@ -4474,6 +4474,10 @@ vue-loader@^13.0.0:
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.5.3"
 
+vue-localstorage:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/vue-localstorage/-/vue-localstorage-0.4.1.tgz#2a292725128542b8eb1d78df7b402583d2877d2c"
+
 vue-style-loader@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/vue-style-loader/-/vue-style-loader-3.0.1.tgz#c8b639bb2f24baf9d78274dc17e4f264c1deda08"
