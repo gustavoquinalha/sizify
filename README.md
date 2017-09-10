@@ -1,4 +1,4 @@
-# vuiew
+# sizify
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/gustavoquinalha/vuew.svg)](https://greenkeeper.io/)
 
