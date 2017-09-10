@@ -2,6 +2,7 @@ import Vue from 'vue';
 import QrcodeVue from 'qrcode.vue';
 import VueLocalStorage from 'vue-localstorage'
 import DefaultSizes from './sizes'
+import uuid from 'uuid/v4'
 
 const CUSTOM_SIZES_LOCAL_STORAGE_KEY = 'custom_sizes'
 
@@ -100,7 +101,9 @@ new Vue({
         width: this.width,
         height: this.height,
         category: "default",
-        name: this.name || 'Custom Size'
+        name: this.name || 'Custom Size',
+        custom: true,
+        id: uuid() 
       }
       this.sizes.push(newSize)
       addNewCustomSizeToLocalStorage(newSize)
@@ -109,6 +112,10 @@ new Vue({
       this.height = ''
       this.name = ''
       this.modalAdd = false
+    },
+    removeSize: function(sizeIdex, size) {
+      this.sizes.splice(sizeIdex, 1)
+      removeFromLocalStorage(size)
     },
     toggleModal: function() {
       this.modalAdd = !this.modalAdd
@@ -151,4 +158,15 @@ function addNewCustomSizeToLocalStorage (newSize) {
 
 function getLocalStorageSizes () {
   return JSON.parse(Vue.localStorage.get(CUSTOM_SIZES_LOCAL_STORAGE_KEY, '[]'))
+}
+
+function updateLocalStorage (sizes) {
+  Vue.localStorage.set(CUSTOM_SIZES_LOCAL_STORAGE_KEY, JSON.stringify(sizes))
+}
+
+function removeFromLocalStorage (size) {
+  const localStorageSizes = getLocalStorageSizes()
+  const index = localStorageSizes.indexOf(size)
+  localStorageSizes.splice(index, 1)
+  updateLocalStorage(localStorageSizes)
 }

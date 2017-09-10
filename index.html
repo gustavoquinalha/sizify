@@ -233,11 +233,12 @@
         <div v-if="filtratipo == 'default'" class="novo">
           <button class="btn" @click="toggleModal">+ New size</button>
         </div>
-        <div class="item" v-for="size in filteredItems" v-bind:style="{ zoom: scala }">
+        <div class="item" v-for="(size, index) in filteredItems" v-bind:style="{ zoom: scala }">
           <div class="box">
             <div class="box-header container center">
               <div class="mg10">
                 <h2 v-text="size.name"></h2>
+                <h5 class="cursor remove" v-if="size.custom" @click="removeSize(index)">Remove</h5>
                 <strong><small>W</small></strong>
                 <input type="text" name="" class="input-number" v-model="size.width"> x
                 <strong><small>H</small></strong>
