@@ -46,27 +46,25 @@
 
   <!-- favicon -->
   <link rel="apple-touch-icon" sizes="57x57" href="./src/assets/icoapple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="./src/assets/ico/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="./src/assets/ico/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="./src/assets/ico/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="./src/assets/ico/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="./src/assets/ico/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="./src/assets/ico/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="./src/assets/ico/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="./src/assets/ico/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="./src/assets/ico/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="./src/assets/ico/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="./src/assets/ico/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./src/assets/ico/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="./src/assets/ico/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="./src/assets/ico/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="./src/assets/ico/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="./src/assets/ico/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="./src/assets/ico/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="./src/assets/ico/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./src/assets/ico/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./src/assets/ico/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="./src/assets/ico/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./src/assets/ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="./src/assets/ico/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./src/assets/ico/favicon-16x16.png">
 
-<link rel="icon"
-      type="image/png"
-      href="./src/assets/ico/favicon-32x32.png"/>
+  <link rel="icon" type="image/png" href="./src/assets/ico/favicon-32x32.png" />
 
-<!-- <link rel="manifest" href="/manifest.json"> -->
-<meta name="msapplication-TileColor" content="#1b0b40">
-<meta name="msapplication-TileImage" content="./src/assets/ico/ms-icon-144x144.png">
-<meta name="theme-color" content="#1b0b40">
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <meta name="msapplication-TileColor" content="#1b0b40">
+  <meta name="msapplication-TileImage" content="./src/assets/ico/ms-icon-144x144.png">
+  <meta name="theme-color" content="#1b0b40">
   <!-- favicon -->
 </head>
 
@@ -81,12 +79,12 @@
             </a></strong>
           </div>
           <div>
-              <div class="git">
-                <a class="gitlink" href="https://github.com/gustavoquinalha/vuew" target="_blank">
+            <div class="git">
+              <a class="gitlink" href="https://github.com/gustavoquinalha/vuew" target="_blank">
                 <img src="./src/assets/github.svg" value="tablet" width="25" alt="">
               </a>
-                <input @keyup.enter="keyUpShow" class="input" placeholder="http://github.com" v-model="site">
-              </div>
+              <input @keyup.enter="keyUpShow" class="input" placeholder="http://github.com" v-model="site">
+            </div>
           </div>
         </div>
       </div>
@@ -97,7 +95,8 @@
         <div class="modal-style">
           <div class="modal-header">
             <div>
-              <h2>QR-CODE</h2></div>
+              <h2>QR-CODE</h2>
+            </div>
             <div @click="toggleModalQrCode">
               <h2 class="cursor">x</h2>
             </div>
@@ -114,16 +113,20 @@
         <div class="modal-style">
           <div class="modal-header">
             <div>
-              <h2>Novo size</h2></div>
+              <h2>New size</h2>
+            </div>
             <div @click="toggleModal">
-              <h2 class="cursor">x</h2></div>
+              <h2 class="cursor">x</h2>
+            </div>
           </div>
           <div class="modal-content">
+            <strong><small>Name</small></strong>
+            <input type="text" name="widthDescription" class="input-number" v-model="name">
             <div class="mg10">
               <strong><small>Width</small></strong>
-              <input type="text" name="" class="input-number" v-model="width"> x
+              <input type="text" name="widthSize" class="input-number size-input" v-model="width"> x
               <strong><small>Height</small></strong>
-              <input type="text" name="" class="input-number" v-model="height" @keyup.enter="addSize">
+              <input type="text" name="heightSize" class="input-number size-input" v-model="height" @keyup.enter="addSize">
             </div>
           </div>
           <div class="modal-buttons">
@@ -228,13 +231,14 @@
 
       <div class="container" v-bind:style="{ flexWrap: wrapp }">
         <div v-if="filtratipo == 'default'" class="novo">
-          <button class="btn" @click="toggleModal">+ Novo size</button>
+          <button class="btn" @click="toggleModal">+ New size</button>
         </div>
-        <div class="item" v-for="size in filteredItems" v-bind:style="{ zoom: scala }">
+        <div class="item" v-for="(size, index) in filteredItems" v-bind:style="{ zoom: scala }">
           <div class="box">
             <div class="box-header container center">
               <div class="mg10">
                 <h2 v-text="size.name"></h2>
+                <h5 class="cursor remove" v-if="size.custom" @click="removeSize(index)">Remove</h5>
                 <strong><small>W</small></strong>
                 <input type="text" name="" class="input-number" v-model="size.width"> x
                 <strong><small>H</small></strong>
@@ -269,8 +273,14 @@
 
   <script src="./dist/build.js"></script>
   <script type="application/ld+json">
-{"@context":"http://www.schema.org","@type":"website","name":"Sizify","url":"http://quinalha.me/sizify","alternateName":"Sizify"}
-</script>
+    {
+      "@context": "http://www.schema.org",
+      "@type": "website",
+      "name": "Sizify",
+      "url": "http://quinalha.me/sizify",
+      "alternateName": "Sizify"
+    }
+  </script>
 </body>
 
 </html>

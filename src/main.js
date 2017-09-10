@@ -1,9 +1,16 @@
 import Vue from 'vue';
 import QrcodeVue from 'qrcode.vue';
+import VueLocalStorage from 'vue-localstorage'
+import DefaultSizes from './sizes'
+import uuid from 'uuid/v4'
+
+const CUSTOM_SIZES_LOCAL_STORAGE_KEY = 'custom_sizes'
+
+Vue.use(VueLocalStorage)
 
 new Vue({
   components: {
-    QrcodeVue
+    QrcodeVue,
   },
 
   el: '#app',
@@ -32,54 +39,45 @@ new Vue({
       tee: 'src/assets/phone.svg',
       ttst: 'close',
       mqrcode: 'close',
-      sizes: [
-        {id: 1, category: "mobile", teste: true, type: "apple", name: "iPhone 4", width: 320, height: 480},
-        {id: 2, category: "mobile", teste: true, type: "apple", name: "iPhone 5", width: 320, height: 568},
-        {id: 3, category: "mobile", teste: true, type: "android", name: "Galaxy S4", width: 360, height: 640},
-        {id: 4, category: "mobile", teste: true, type: "apple", name: "iPhone 6", width: 375, height: 667},
-        {id: 5, category: "mobile", teste: true, type: "apple", name: "iPhone 7 Plus", width: 414, height: 736},
-        {id: 6, category: "tablet", teste: true, type: "android", name: "Nexus 7", width: 600, height: 960},
-        {id: 7, category: "tablet", teste: true, type: "apple", name: "iPad Air", width: 768, height: 1024}
-      ],
+      sizes: [...DefaultSizes, ...getLocalStorageSizes()],
       sizeMobile: false,
       title: 'Colored filter',
-
-        filtratipo: 'all'
+      filtratipo: 'all'
     };
   },
 
   computed: {
-    filteredItems: function () {
+    filteredItems: function() {
       this.className = 'teste'
-                var result;
-                if  (this.filtratipo != 'all'){
-                    var filtratipo = this.filtratipo
-                    result = this.sizes.filter(function (a) {
-                        return a.category == filtratipo
-                    });
+      var result;
+      if (this.filtratipo != 'all') {
+        var filtratipo = this.filtratipo
+        result = this.sizes.filter(function(a) {
+          return a.category == filtratipo
+        });
 
-                } else {
-                    result =  this.sizes;
-                }
+      } else {
+        result = this.sizes;
+      }
 
-                return result;
-            },
-
+      return result;
     },
 
+  },
+
   methods: {
-    revert: function (event) {
-      this.sizes.filter(function (a) {
-          // console.log(a.name, a.width, a.height)
-          var recebeW = a.width
-          var recebeH = a.height
+    revert: function(event) {
+      this.sizes.filter(function(a) {
+        // console.log(a.name, a.width, a.height)
+        var recebeW = a.width
+        var recebeH = a.height
 
-          var viraw = recebeW
-          var virah = recebeH
+        var viraw = recebeW
+        var virah = recebeH
 
-          a.width = virah
-          a.height = viraw
-          // console.log(viraw, virah)
+        a.width = virah
+        a.height = viraw
+        // console.log(viraw, virah)
 
       });
       var v = "src/assets/phone.svg"
@@ -92,52 +90,83 @@ new Vue({
 
     },
 
-      keyUpShow: function (event) {
+    keyUpShow: function(event) {
       this.site = event.target.value
     },
-      teste: function (event) {
+    teste: function(event) {
       return this.sizes.filter(size => size.mobile);
     },
     addSize: function() {
-      this.sizes.push({
-       width: this.width,
-       height: this.height,
-       category: "default",
-       name: "default"
-     }),
-     this.width = ''
-     this.height = ''
-     this.modalAdd = false
-   },
-   toggleModal: function() {
-     this.modalAdd = !this.modalAdd
-     this.modalQrCode = false
-     },
-   toggleModalTeclado: function() {
-       var open = "open"
-       var close = "close"
+      const newSize = {
+        width: this.width,
+        height: this.height,
+        category: "default",
+        name: this.name || 'Custom Size',
+        custom: true,
+        id: uuid() 
+      }
+      this.sizes.push(newSize)
+      addNewCustomSizeToLocalStorage(newSize)
 
-       this.modalTeclado = !this.modalTeclado;
+      this.width = ''
+      this.height = ''
+      this.name = ''
+      this.modalAdd = false
+    },
+    removeSize: function(sizeIdex, size) {
+      this.sizes.splice(sizeIdex, 1)
+      removeFromLocalStorage(size)
+    },
+    toggleModal: function() {
+      this.modalAdd = !this.modalAdd
+      this.modalQrCode = false
+    },
+    toggleModalTeclado: function() {
+      var open = "open"
+      var close = "close"
 
-       
-       if (this.ttst == open) {
-         this.ttst = close
-       } else {
-         this.ttst = open
-       }
+      this.modalTeclado = !this.modalTeclado;
+
+
+      if (this.ttst == open) {
+        this.ttst = close
+      } else {
+        this.ttst = open
+      }
 
     },
-   toggleModalQrCode: function() {
-       this.modalQrCode = !this.modalQrCode
-       this.modalAdd = false
+    toggleModalQrCode: function() {
+      this.modalQrCode = !this.modalQrCode
+      this.modalAdd = false
 
-       var open = "open"
-       var close = "close"
-       if (this.mqrcode == open) {
-         this.mqrcode = close
-       } else {
-         this.mqrcode = open
-       }
-     },
+      var open = "open"
+      var close = "close"
+      if (this.mqrcode == open) {
+        this.mqrcode = close
+      } else {
+        this.mqrcode = open
+      }
+    },
   }
 });
+
+function addNewCustomSizeToLocalStorage (newSize) {
+  const contextCustomSizes = getLocalStorageSizes()
+  contextCustomSizes.push(newSize)
+  Vue.localStorage.set(CUSTOM_SIZES_LOCAL_STORAGE_KEY, JSON.stringify(contextCustomSizes))
+}
+
+function getLocalStorageSizes () {
+  return JSON.parse(Vue.localStorage.get(CUSTOM_SIZES_LOCAL_STORAGE_KEY, '[]'))
+}
+
+function updateLocalStorage (sizes) {
+  Vue.localStorage.set(CUSTOM_SIZES_LOCAL_STORAGE_KEY, JSON.stringify(sizes))
+}
+
+function removeFromLocalStorage (size) {
+  const localStorageSizes = getLocalStorageSizes()
+  const index = localStorageSizes.indexOf(size)
+  localStorageSizes.splice(index, 1)
+  updateLocalStorage(localStorageSizes)
+}

@@ -52,6 +52,10 @@ z-index: 9999
 .cursor {
   cursor: pointer;
 }
+.remove {
+  color: #EC644B;
+  padding: 0px 0px 10px 0px
+}
 @media only screen and (max-width: 400px) {
   .hideMobile {
     display: none
