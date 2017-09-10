@@ -103,10 +103,11 @@ new Vue({
        width: this.width,
        height: this.height,
        category: "default",
-       name: "default"
+       name: this.name || 'Custom Size'
      }),
      this.width = ''
      this.height = ''
+     this.name = ''
      this.modalAdd = false
    },
    toggleModal: function() {
