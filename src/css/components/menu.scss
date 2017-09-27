@@ -1,34 +1,39 @@
 .rel-menu {
   position: relative;
   min-height: 60px;
-width: 100%;
-z-index: 9999
+  width: 100%;
+  z-index: 9999;
 }
+
 .menu {
   background: #21222C;
   color: #dfdfdf;
   position: fixed;
-  width: 100%
+  width: 100%;
 }
+
 .menu-topo {
   height: 60px;
   width: 98%;
 }
+
 .git {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .git img {
-  padding-right: 10px
+  padding-right: 10px;
 }
 
 .gitlink img {
-  opacity: .5;
-  transition: .3s
+  opacity: 0.5;
+  transition: 0.3s;
 }
+
 .gitlink:hover img {
-  opacity: 1
+  opacity: 1;
 }
 
 .menu-lateral-rel {
@@ -37,8 +42,9 @@ z-index: 9999
   margin-right: 10px;
   min-width: 70px;
   flex-basis: 70px;
-  z-index: 999
+  z-index: 999;
 }
+
 .menu-lateral {
   background: #282A36;
   border-right: 1px solid #21222C;
@@ -47,48 +53,55 @@ z-index: 9999
   position: fixed;
   left: 0;
   margin-right: 10px;
-  z-index: 999
+  z-index: 999;
 }
+
 .cursor {
   cursor: pointer;
 }
+
 .remove {
   color: #EC644B;
-  padding: 0px 0px 10px 0px
+  padding: 0 0 10px;
 }
 @media only screen and (max-width: 400px) {
   .hideMobile {
-    display: none
+    display: none;
   }
 }
 @media only screen and (max-width: 700px) {
   .hideTablet {
-    display: none
+    display: none;
   }
 }
 
-
 .staggered-transition {
-    transition: all .5s ease;
-    overflow: hidden;
-    margin: 0;
-    height: 20px;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  margin: 0;
+  height: 20px;
 }
-.staggered-enter, .staggered-leave {
-    opacity: 0;
-    height: 0;
+
+.staggered-enter,
+.staggered-leave {
+  opacity: 0;
+  height: 0;
 }
+
 .menu2 {
   padding-top: 10px;
-  padding-bottom: 10px
+  padding-bottom: 10px;
 }
+
 .menu .logo {
   width: 80px;
-  max-width: 90%
+  max-width: 90%;
 }
+
 .btns {
-  margin-top: 10px
+  margin-top: 10px;
 }
+
 .btns li {
-  margin-bottom: 10px
+  margin-bottom: 10px;
 }
