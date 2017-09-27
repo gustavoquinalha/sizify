@@ -3,21 +3,48 @@ const DEFAULT_SIZES = [{
     category: "mobile",
     teste: true,
     type: "apple",
-    name: "iPhone 4",
-    width: 320,
-    height: 480
+    name: "iPhone X",
+    width: 357,
+    height: 724
   },
   {
     id: 2,
     category: "mobile",
     teste: true,
     type: "apple",
-    name: "iPhone 5",
+    name: "iPhone 6/7 Plus (S)",
+    width: 414,
+    height: 736
+  },
+  {
+    id: 3,
+    category: "mobile",
+    teste: true,
+    type: "apple",
+    name: "iPhone 6/7 (S)",
+    width: 375,
+    height: 667
+  },
+  {
+    id: 4,
+    category: "mobile",
+    teste: true,
+    type: "apple",
+    name: "iPhone 5 (C/S/SE)",
     width: 320,
     height: 568
   },
   {
-    id: 3,
+    id: 5,
+    category: "mobile",
+    teste: true,
+    type: "apple",
+    name: "iPhone 4",
+    width: 320,
+    height: 480
+  },
+  {
+    id: 6,
     category: "mobile",
     teste: true,
     type: "android",
@@ -26,25 +53,7 @@ const DEFAULT_SIZES = [{
     height: 640
   },
   {
-    id: 4,
-    category: "mobile",
-    teste: true,
-    type: "apple",
-    name: "iPhone 6",
-    width: 375,
-    height: 667
-  },
-  {
-    id: 5,
-    category: "mobile",
-    teste: true,
-    type: "apple",
-    name: "iPhone 7 Plus",
-    width: 414,
-    height: 736
-  },
-  {
-    id: 6,
+    id: 7,
     category: "tablet",
     teste: true,
     type: "android",
@@ -53,7 +62,7 @@ const DEFAULT_SIZES = [{
     height: 960
   },
   {
-    id: 7,
+    id: 8,
     category: "tablet",
     teste: true,
     type: "apple",
