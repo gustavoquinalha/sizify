@@ -23,7 +23,7 @@
     "cross-env": "^5.0.1",
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^2.1.0",
-    "file-loader": "^0.11.2",
+    "file-loader": "^1.1.0",
     "node-sass": "^4.5.0",
     "purify-css": "^1.2.3",
     "purifycss-webpack": "^0.7.0",
