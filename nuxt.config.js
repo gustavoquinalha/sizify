@@ -38,7 +38,7 @@ module.exports = {
       {name: 'theme-color', content: '#24292e'}
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: 'https://gustavoquinalha.github.io/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: 'https://gustavoquinalha.github.io/sizify/favicon.ico' }
     ]
   },
   /*
