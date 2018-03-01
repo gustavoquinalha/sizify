@@ -7,23 +7,23 @@
     "img/teclado-horizontal.d21d105.png",
     "img/teclado-vertical.c974ed3.png",
     "img/keyboard.9429b82.svg",
-    "pages/index.0e5497f99a2464e8996b.js",
+    "pages/index.15a748f4a6d6e6549f0e.js",
     "img/logo.1bb8b45.svg",
     "vendor.2a89a43f0b2419881787.js",
     "app.c9a417bb6ca80c88a046.js",
-    "manifest.ff66a53f5f0bf55658a0.js",
+    "manifest.de9f0acdfd1dc97ae641.js",
     "LICENSES",
     "index.spa.html",
     "index.ssr.html"
   ],
   "initial": [
-    "manifest.ff66a53f5f0bf55658a0.js",
+    "manifest.de9f0acdfd1dc97ae641.js",
     "vendor.2a89a43f0b2419881787.js",
     "app.c9a417bb6ca80c88a046.js"
   ],
   "async": [
     "layouts/default.051b412758184c1f62df.js",
-    "pages/index.0e5497f99a2464e8996b.js"
+    "pages/index.15a748f4a6d6e6549f0e.js"
   ],
   "modules": {
     "43878477": [
@@ -73,6 +73,15 @@
     ],
     "57e1022a": [
       8
+    ],
+    "25b44184": [
+      6,
+      1,
+      7,
+      2,
+      3,
+      4,
+      5
     ],
     "492b8c60": [
       9
@@ -485,15 +494,6 @@
     "811d7e18": [
       8
     ],
-    "6b36c98a": [
-      6,
-      1,
-      7,
-      2,
-      3,
-      4,
-      5
-    ],
     "80cfde3a": [
       8
     ],
@@ -575,17 +575,20 @@
       4,
       5
     ],
-    "1b0cd230": [
-      8
-    ],
-    "629e580d": [
-      8
-    ],
     "3041b3f8": [
       8
     ],
     "37cf9ba4": [
       8
+    ],
+    "94fe89fe": [
+      6,
+      1,
+      7,
+      2,
+      3,
+      4,
+      5
     ],
     "629fd0e0": [
       6,
@@ -671,15 +674,6 @@
     "7e4af99a": [
       8
     ],
-    "ba482472": [
-      6,
-      1,
-      7,
-      2,
-      3,
-      4,
-      5
-    ],
     "b2234260": [
       8
     ],
@@ -690,6 +684,15 @@
       8
     ],
     "129d97c0": [
+      6,
+      1,
+      7,
+      2,
+      3,
+      4,
+      5
+    ],
+    "233bba34": [
       6,
       1,
       7,
@@ -839,6 +842,9 @@
     "7f4f837b": [
       8
     ],
+    "1b0cd230": [
+      8
+    ],
     "cd8f92e2": [
       8
     ],
@@ -856,15 +862,6 @@
     ],
     "66275ead": [
       8
-    ],
-    "b59f7286": [
-      6,
-      1,
-      7,
-      2,
-      3,
-      4,
-      5
     ],
     "dec03952": [
       8
@@ -888,6 +885,9 @@
       9
     ],
     "6a49efae": [
+      8
+    ],
+    "629e580d": [
       8
     ]
   }

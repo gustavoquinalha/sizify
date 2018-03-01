@@ -14,7 +14,7 @@
         </div>
 
         <div class="menu--links margin-left-10 flex-grow-1 container justify-content-end align-items-center">
-          <a href="https://github.com/gustavoquinalha/sizify-new" target="_blank">
+          <a href="https://github.com/gustavoquinalha/sizify" target="_blank">
             <img src="~/assets/images/icons/github.svg" width="30" alt="" />
           </a>
         </div>
