@@ -17,13 +17,13 @@ module.exports = {
       // google+
       {itemprop: 'name', content: 'Sizify'},
       {itemprop: 'description', content: 'A tool for preview changes and test on multiple devices instantly..'},
-      {itemprop: 'image', content: 'https://gustavoquinalha.github.io/sizify/assets/images/intro.jpg'},
+      {itemprop: 'image', content: 'https://gustavoquinalha.github.io/sizify/intro.jpg'},
       // facebook
       {property: 'og:type', content: 'website'},
       {property: 'og:title', content: 'Sizify'},
       {property: 'og:url', content: 'https://gustavoquinalha.github.io/sizify/'},
       {property: 'og:site_name', content: 'Sizify'},
-      {property: 'og:image', content: 'https://gustavoquinalha.github.io/sizify/assets/images/intro.jpg'},
+      {property: 'og:image', content: 'https://gustavoquinalha.github.io/sizify/intro.jpg'},
       {property: 'og:description', content: 'A tool for preview changes and test on multiple devices instantly.'},
       {property: 'og:locale', content: 'pt_Br'},
       {property: 'fb:app_id', content: '122670998365518'},
@@ -33,12 +33,12 @@ module.exports = {
       {name: 'twitter:title', content: 'Sizify'},
       {name: 'twitter:description', content: 'A tool for preview changes and test on multiple devices instantly.'},
       {name: 'twitter:creator', content: 'Sizify'},
-      {name: 'twitter:image', content: 'https://gustavoquinalha.github.io/sizify/assets/images/intro.jpg'},
+      {name: 'twitter:image', content: 'https://gustavoquinalha.github.io/sizify/intro.jpg'},
       // android
       {name: 'theme-color', content: '#24292e'}
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: 'https://gustavoquinalha.github.io/favicon.ico' }
     ]
   },
   /*
