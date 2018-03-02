@@ -19,7 +19,8 @@
           </div>
 
           <form class="container column text-align-center" @submit.prevent="validateBeforeSubmit">
-            <input type="url" v-model="url" class="input input-opacity" name="url" id="url" placeholder="Ex: https://github.com" required v-validate="'required|url'">
+            <input type="text" v-model="url" class="input input-opacity" name="url" id="url" placeholder="Ex: https://github.com" required v-validate="'required|url:http'">
+            <span v-show="errors.has('url')" class="error margin-top-10">{{ errors.first('url') }}</span>
           </form>
 
           <div class="margin-top-10">
@@ -103,5 +104,10 @@
       bottom: 20px;
       font-size: 14px;
     }
+  }
+
+  .error {
+    color: #ff4455;
+    font-size: 14px;
   }
 </style>

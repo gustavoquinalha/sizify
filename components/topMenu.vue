@@ -10,7 +10,12 @@
         </div>
 
         <div class="menu--search flex-basis-300 container align-items-center" v-show="config.url">
-          <input type="url" v-model="config.url" class="input input-opacity" name="name" placeholder="Ex: https://github.com">
+          <form class="container align-items-center text-align-center" @submit.prevent="validateBeforeSubmit">
+            <input type="text" v-model="url" class="input input-opacity" name="url" id="url" placeholder="Ex: https://github.com" required v-validate="'required|url:http'">
+            <div class="absolute-error">
+              <span v-show="errors.has('url')" class="error margin-top-10">{{ errors.first('url') }}</span>
+            </div>
+          </form>
         </div>
 
         <div class="menu--links margin-left-10 flex-grow-1 container justify-content-end align-items-center">
@@ -25,6 +30,8 @@
 </template>
 
 <script>
+  import Vue from 'vue';
+  import VeeValidate from 'vee-validate';
   import {
     mapState
   }
@@ -33,10 +40,23 @@
   export default {
     name: 'topMenu',
     data() {
-      return {}
+      return {
+        url: 'http://'
+      }
     },
     computed: {
       ...mapState(['config'])
+    },
+    methods: {
+      validateBeforeSubmit() {
+        this.$validator.validateAll().then((result) => {
+          if (result) {
+            this.config.url = this.url
+            return;
+          }
+
+        });
+      }
     }
   }
 </script>
@@ -73,6 +93,12 @@
         max-width: 100%;
       }
     }
+    .menu--search {
+      position: relative;
+      form {
+        width: 100%;
+      }
+    }
   }
 
   .input-opacity {
@@ -93,6 +119,19 @@
       &::placeholder {
         color: #24292e
       }
+    }
+  }
+
+  .absolute-error {
+    position: absolute;
+    top: 10px;
+    left: 300px;
+    width: 100%;
+    text-align: left;
+    margin-left: 10px;
+    @media (max-width: 720px) {
+      left: 0;
+      top: 48px;
     }
   }
 </style>

@@ -9,13 +9,15 @@ const createStore = () => {
     state: {
       config: {
         url: '',
-        show: '', // mobile, tablet, my
+        show: '', // mobile, tablet, defaul,
         landscape: false,
         keyboard: false,
         wrap: false,
         size: 1, // 1 .75 .50 .25
         qrcode: false,
-        defaultHeight: false
+        defaultHeight: false,
+        newSize: false,
+        lastId: 10
       },
       sizes: [
         {
@@ -91,7 +93,6 @@ const createStore = () => {
           var sizeW = size.width
           size.width = size.height
           size.height = sizeW
-          // console.log(size.width + 'x' + size.height)
         })
       },
       setHeight (state) {

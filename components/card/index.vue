@@ -1,9 +1,9 @@
 <template>
   <div class="container-card container align-items-start" :class="{ wrap : config.wrap }">
-    <div v-for="card in data" url="url" class="card" :style="{ minWidth: card.width * config.size + 'px'}" v-show="config.show === card.category || config.show === ''">
+    <div v-for="(card, index) in data" url="url" class="card" :style="{ minWidth: card.width * config.size + 'px'}" v-show="config.show === card.category || config.show === ''">
 
-      <div class="card--head container column align-center">
-        <strong>{{card.name}}</strong>
+      <div class="card--head container column align-center" :style="{width: card.width * config.size + 'px'}">
+        <strong>{{card.name}} <button type="button" name="button" class="btn btn-sm" @click="removeSize(index)"><img src="~/assets/images/icons/bin.svg" width="14" alt=""> </button> </strong>
         <div class="container ">
           <div class="flex-grow-1 container align-items-center">
             <span>W</span>
@@ -52,12 +52,16 @@
       }
     },
     methods: {
-      goTo: function () {
-        alert("teste")
+      removeSize: function(index) {
+        console.log(index)
+        var r = confirm("Do you want to delete?")
+        if (r == true) {
+          this.sizes.splice(index, 1);
+        }
       }
     },
     computed: {
-      ...mapState(['config'])
+      ...mapState(['config', 'sizes'])
     }
   }
 </script>

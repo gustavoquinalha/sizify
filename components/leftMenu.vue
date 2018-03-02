@@ -5,6 +5,10 @@
         <div class="left-menu--links flex-grow-1 container column justify-content-center align-items-center">
 
           <div class="block-left-menu container column justify-content-center align-items-center">
+            <button type="button" name="button" class="btn btn-primary" @click="config.newSize = true">+</button>
+          </div>
+
+          <div class="block-left-menu container column justify-content-center align-items-center">
             <div class="item-left-menu" @click="config.show = ''" :class="{ active : config.show === '' }">
               <img src="~/assets/images/icons/all.svg" width="23" alt="" />
             </div>
@@ -16,9 +20,10 @@
             <div class="item-left-menu" @click="config.show = 'tablet'" :class="{ active : config.show === 'tablet' }">
               <img src="~/assets/images/icons/tablet.svg" width="23" alt="" />
             </div>
-            <!-- <div class="item-left-menu">
+
+            <div class="item-left-menu" @click="config.show = 'default'" :class="{ active : config.show === 'default' }">
               <img src="~/assets/images/icons/default.svg" width="18" alt="" />
-            </div> -->
+            </div>
           </div>
 
           <div class="block-left-menu container column justify-content-center align-items-center">
