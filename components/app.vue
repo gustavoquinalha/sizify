@@ -3,6 +3,7 @@
     <card :data='sizes' />
     <modalQR/>
     <modalAdd/>
+    <modalExpand/>
   </div>
 </template>
 
@@ -10,6 +11,7 @@
   import card from '~/components/card'
   import modalQR from '~/components/modal-qr'
   import modalAdd from '~/components/modal-add'
+  import modalExpand from '~/components/modal-expand'
   import {
     mapState
   }
@@ -20,7 +22,8 @@
     components: {
       card,
       modalQR,
-      modalAdd
+      modalAdd,
+      modalExpand
     },
     data() {
       return {
@@ -36,6 +39,7 @@
 <style lang='scss' scoped>
   .app {
     background: #FAFBFC;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, .5);
     overflow: hidden;
     width: 100%;
   }

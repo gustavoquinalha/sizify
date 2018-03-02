@@ -1,6 +1,6 @@
 <template lang="html">
+  <transition name="fade">
   <div class="" v-show="config.newSize">
-    <transition name="fade">
       <div class="modal container align-center">
         <div class="modal-block">
           <div class="modal-block--head container align-items-center justify-content-between">
@@ -40,8 +40,8 @@
           </div>
         </div>
       </div>
-    </transition>
   </div>
+</transition>
 </template>
 
 <script>
@@ -51,9 +51,6 @@
   from 'vuex'
 
   export default {
-    transition: {
-      name: 'fade'
-    },
     components: {},
     data() {
       return {

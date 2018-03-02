@@ -88,9 +88,13 @@
     background: #24292e;
     position: relative;
     font-size: 18px;
-    input {
+    form {
       width: 500px;
       max-width: 90%;
+      margin: 0 auto;
+      input {
+        width: 100%;
+      }
     }
     p {
       font-weight: 900;

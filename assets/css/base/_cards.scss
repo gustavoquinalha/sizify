@@ -1,0 +1,73 @@
+.container-card {
+  height: calc(100vh - 60px);
+  overflow: hidden;
+  width: 100%;
+  overflow: scroll;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.card {
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  .card--head {
+    background: #f4f4f4;
+    border-bottom: 1px solid #ddd;
+    min-height: 80px;
+    padding: 15px;
+    box-sizing: border-box;
+    .btn {
+      margin: 2px;
+    }
+    .container {
+      > div {
+        margin: 10px;
+        margin-bottom: 0;
+        span {
+          font-weight: bold;
+          margin-right: 5px;
+          font-size: 14px;
+        }
+      }
+    }
+    input {
+      width: 100%;
+      text-align: center;
+      border: 1px solid #ddd;
+      padding: 5px;
+    }
+  }
+  .card--content {
+    position: relative;
+    iframe {
+      border: none;
+    }
+    .card--content--keyboard {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      transform-origin: bottom;
+      img {
+        transform-origin: bottom;
+        width: 100%;
+        background: red;
+      }
+    }
+  }
+}
+
+.hidden {
+  display: none
+}
+
+.default-height {
+  height: calc(100vh - 210px)!important;
+  iframe {
+    height: calc(100vh - 210px)!important;
+  }
+}

@@ -38,9 +38,15 @@ module.exports = {
       {name: 'theme-color', content: '#24292e'}
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: 'https://gustavoquinalha.github.io/sizify/favicon.ico' }
-    ]
+      { rel: 'icon', type: 'image/x-icon', href: 'https://gustavoquinalha.github.io/sizify/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.0.6/css/all.css' }
+    ],
   },
+  // plugins: [
+  //   {src: '~/plugins/canvas2image.js', ssr: false},
+  //   {src: '~/plugins/html2canvas.js', ssr: false}
+  // ],
+
   /*
   ** Customize the progress bar color
   */
@@ -49,18 +55,20 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    vendor: [
+      '~/plugins/canvas2image.js'
+    ],
+
+
     /*
     ** Run ESLint on save
     */
     extend (config, ctx) {
-      // if (ctx.dev && ctx.isClient) {
-      //   config.module.rules.push({
-      //     enforce: 'pre',
-      //     test: /\.(js|vue)$/,
-      //     loader: 'eslint-loader',
-      //     exclude: /(node_modules)/
-      //   })
-      // }
+      config.module.rules.forEach((rule) => {
+        if (rule.test.toString() === '/\\.vue$/') {
+          rule.options.loaders.scss[2].options.data = '@import "./assets/css/main.scss";'
+        }
+      })
     }
   }
 }

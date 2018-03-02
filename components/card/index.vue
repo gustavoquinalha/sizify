@@ -3,7 +3,14 @@
     <div v-for="(card, index) in data" url="url" class="card" :style="{ minWidth: card.width * config.size + 'px'}" v-show="config.show === card.category || config.show === ''">
 
       <div class="card--head container column align-center" :style="{width: card.width * config.size + 'px'}">
-        <strong>{{card.name}} <button type="button" name="button" class="btn btn-sm" @click="removeSize(index)"><img src="~/assets/images/icons/bin.svg" width="14" alt=""> </button> </strong>
+        <div class="container align-items-center">
+
+          <strong>{{card.name}}</strong>
+
+          <button type="button" name="button" class="btn btn-sm" @click="removeSize(index)"><i class="fas fa-trash-alt"></i></button>
+          <button type="button" name="button" class="btn btn-sm" @click="expand(card)"><i class="fas fa-expand-arrows-alt"></i></button>
+
+        </div>
         <div class="container ">
           <div class="flex-grow-1 container align-items-center">
             <span>W</span>
@@ -41,7 +48,15 @@
   export default {
     name: 'card',
     data() {
-      return {}
+      return {
+        expandSize: {
+          id: '',
+          category: '',
+          name: '',
+          width: '',
+          height: ''
+        }
+      }
     },
     props: {
       data: {
@@ -58,6 +73,13 @@
         if (r == true) {
           this.sizes.splice(index, 1);
         }
+      },
+
+      expand: function(card) {
+        console.log(card);
+
+        console.log(this.config.expand);
+        this.config.expand = card.id
       }
     },
     computed: {
@@ -67,74 +89,5 @@
 </script>
 
 <style lang="scss" scoped>
-  .container-card {
-    height: calc(100vh - 60px);
-    overflow: hidden;
-    width: 100%;
-    overflow: scroll;
-    padding: 10px;
-    box-sizing: border-box;
-  }
 
-  .card {
-    margin: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-    .card--head {
-      background: #f4f4f4;
-      border-bottom: 1px solid #ddd;
-      min-height: 80px;
-      padding: 15px;
-      box-sizing: border-box;
-      .container {
-        > div {
-          margin: 10px;
-          margin-bottom: 0;
-          span {
-            font-weight: bold;
-            margin-right: 5px;
-            font-size: 14px;
-          }
-        }
-      }
-      input {
-        width: 100%;
-        text-align: center;
-        border: 1px solid #ddd;
-        padding: 5px;
-      }
-    }
-    .card--content {
-      position: relative;
-      iframe {
-        border: none;
-      }
-      .card--content--keyboard {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: calc(100% - .9em);
-        transform-origin: bottom;
-        img {
-          transform-origin: bottom;
-          width: 100%;
-          background: red;
-        }
-      }
-    }
-  }
-
-  .hidden {
-    display: none
-  }
-
-  .default-height {
-    height: calc(100vh - 210px)!important;
-    iframe {
-      height: calc(100vh - 210px)!important;
-    }
-  }
 </style>

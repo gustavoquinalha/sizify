@@ -45,6 +45,10 @@
       }
     },
     computed: {
+      tey: function() {
+        this.url = this.config.url
+      },
+
       ...mapState(['config'])
     },
     methods: {

@@ -1,6 +1,6 @@
 <template lang="html">
-  <div class="" v-show="config.qrcode">
-    <transition name="fade">
+  <transition name="fade">
+    <div class="" v-show="config.qrcode">
       <div class="modal container align-center">
         <div class="modal-block">
           <div class="modal-block--head container align-items-center justify-content-between">
@@ -21,8 +21,8 @@
           </div>
         </div>
       </div>
-    </transition>
-  </div>
+    </div>
+  </transition>
 </template>
 
 <script>

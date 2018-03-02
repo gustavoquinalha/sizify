@@ -100,7 +100,8 @@
     position: relative;
     min-width: 60px;
     min-height: calc(100vh - 60px);
-    box-shadow: 3px 0 6px 0 rgba(0, 0, 0, .1)
+    // box-shadow: 3px 0 6px 0 rgba(0, 0, 0, .1)
+
   }
 
   .left-menu-fixed {
@@ -109,6 +110,7 @@
     width: 60px;
     position: fixed;
     background: #404448;
+    box-shadow: inset 0 0 2px rgba(0,0,0,.5);
     color: #fff;
     z-index: 100;
   }
