@@ -1,9 +1,9 @@
 <template>
   <div class="container-card container align-items-start" :class="{ wrap : config.wrap }">
     <div v-for="card in data" url="url" class="card" :style="{ minWidth: card.width * config.size + 'px'}" v-show="config.show === card.category || config.show === ''">
+
       <div class="card--head container column align-center">
         <strong>{{card.name}}</strong>
-
         <div class="container ">
           <div class="flex-grow-1 container align-items-center">
             <span>W</span>
@@ -17,7 +17,6 @@
             <input type="number" v-model="card.height" name="" value="">
           </div>
         </div>
-
       </div>
 
       <div class="card--content" :class="{'default-height' : config.defaultHeight}" :style="{transform: 'scale(' + config.size + ',' + config.size + ')', transformOrigin: 'left top 0px', height: card.height * config.size + 'px', width: card.width * config.size + 'px'}">
@@ -50,6 +49,11 @@
       },
       url: {
         type: String
+      }
+    },
+    methods: {
+      goTo: function () {
+        alert("teste")
       }
     },
     computed: {
@@ -124,9 +128,9 @@
   }
 
   .default-height {
-    height: calc(100vh - 200px)!important;
+    height: calc(100vh - 210px)!important;
     iframe {
-      height: calc(100vh - 200px)!important;
+      height: calc(100vh - 210px)!important;
     }
   }
 </style>

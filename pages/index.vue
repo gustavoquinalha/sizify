@@ -3,32 +3,42 @@
     <div>
       <topMenu/>
 
-      <div class="container" v-show="config.url">
-        <leftMenu/>
-        <app/>
-      </div>
+      <transition name="fade">
+        <div class="container" v-show="config.url">
+          <leftMenu/>
+          <app/>
+        </div>
+      </transition>
     </div>
 
-    <div v-show="!config.url">
-      <div class="container column align-center content">
-        <div class="margin-bottom-10">
-          <p>Enter a url:</p>
-        </div>
-        <input type="url" v-model="url" class="input input-opacity" name="url" placeholder="Ex: https://github.com" v-on:keyup.enter="setUrl">
-        <div class="margin-top-10">
-          <small>Don`t forget http:// or https://</small>
-        </div>
+    <transition name="fade">
+      <div v-show="!config.url">
+        <div class="container column align-center content">
+          <div class="margin-bottom-10">
+            <p>Enter a url</p>
+          </div>
 
-        <div class="credits">
-          <span>© 2018 Sizify</span>
+          <form class="container column text-align-center" @submit.prevent="validateBeforeSubmit">
+            <input type="url" v-model="url" class="input input-opacity" name="url" id="url" placeholder="Ex: https://github.com" required v-validate="'required|url'">
+          </form>
+
+          <div class="margin-top-10">
+            <small>Don`t forget http:// or https://</small>
+          </div>
+
+          <div class="credits">
+            <span>© 2018 Sizify</span>
+          </div>
         </div>
       </div>
-    </div>
+    </transition>
 
   </div>
 </template>
 
 <script>
+  import Vue from 'vue';
+  import VeeValidate from 'vee-validate';
   import topMenu from '~/components/topMenu.vue'
   import leftMenu from '~/components/leftMenu.vue'
   import app from '~/components/app.vue'
@@ -36,6 +46,8 @@
     mapState
   }
   from 'vuex'
+
+  Vue.use(VeeValidate);
 
   export default {
     components: {
@@ -48,9 +60,15 @@
 
     },
     methods: {
-      setUrl: function() {
-        this.config.url = this.url
-      }
+      validateBeforeSubmit() {
+        this.$validator.validateAll().then((result) => {
+          if (result) {
+            this.config.url = this.url
+            return;
+          }
+
+        });
+      },
     },
     data() {
       return {

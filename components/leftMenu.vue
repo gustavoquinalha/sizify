@@ -37,7 +37,7 @@
             </div>
           </div>
 
-          <div class="block-left-menu container column justify-content-center align-items-center">
+          <!-- <div class="block-left-menu container column justify-content-center align-items-center">
             <div class="item-left-menu" @click="config.wrap = false" :class="{ active : !config.wrap }">
               <img src="~/assets/images/icons/nowrap.svg" width="18" alt="" />
             </div>
@@ -45,7 +45,7 @@
             <div class="item-left-menu" @click="config.wrap = true" :class="{ active : config.wrap }">
               <img src="~/assets/images/icons/wrap.svg" width="18" alt="" />
             </div>
-          </div>
+          </div> -->
 
           <div class="block-left-menu container column justify-content-center align-items-center">
             <div class="item-left-menu" :class="{ active : config.size === 1}" @click="config.size = 1">
