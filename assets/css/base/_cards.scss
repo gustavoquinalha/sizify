@@ -1,8 +1,7 @@
 .container-card {
   height: calc(100vh - 60px);
-  overflow: hidden;
   width: 100%;
-  overflow: scroll;
+  overflow: auto;
   padding: 10px;
   box-sizing: border-box;
 }

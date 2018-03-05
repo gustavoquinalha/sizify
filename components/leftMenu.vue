@@ -32,7 +32,7 @@
             </div>
 
             <div class="item-left-menu" @click="$store.commit('showKeyboard')" :class="{ active : config.keyboard }">
-            <i class="fas fa-keyboard"></i>
+              <i class="fas fa-keyboard"></i>
             </div>
           </div>
 
@@ -42,15 +42,15 @@
             </div>
           </div>
 
-          <!-- <div class="block-left-menu container column justify-content-center align-items-center">
+          <div class="block-left-menu container column justify-content-center align-items-center">
             <div class="item-left-menu" @click="config.wrap = false" :class="{ active : !config.wrap }">
-              <img src="~/assets/images/icons/nowrap.svg" width="18" alt="" />
+              <i class="fas fa-pause"></i>
             </div>
 
             <div class="item-left-menu" @click="config.wrap = true" :class="{ active : config.wrap }">
-              <img src="~/assets/images/icons/wrap.svg" width="18" alt="" />
+              <i class="fas fa-th-large"></i>
             </div>
-          </div> -->
+          </div>
 
           <div class="block-left-menu container column justify-content-center align-items-center">
             <div class="item-left-menu" :class="{ active : config.size === 1}" @click="config.size = 1">
@@ -99,18 +99,15 @@
   .relative-left-menu {
     position: relative;
     min-width: 60px;
-    min-height: calc(100vh - 60px);
-    // box-shadow: 3px 0 6px 0 rgba(0, 0, 0, .1)
-
   }
 
   .left-menu-fixed {
-    height: 100%;
     overflow: auto;
+    height: calc(100vh - 60px);
     width: 60px;
     position: fixed;
     background: #404448;
-    box-shadow: inset 0 0 2px rgba(0,0,0,.5);
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, .5);
     color: #fff;
     z-index: 100;
   }
