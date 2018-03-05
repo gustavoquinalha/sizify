@@ -3,15 +3,16 @@
     <div v-for="(card, index) in data" url="url" class="card" :style="{ minWidth: card.width * config.size + 'px'}" v-show="config.show === card.category || config.show === ''">
 
       <div class="card--head container column align-center" :style="{width: card.width * config.size + 'px'}">
-        <div class="container align-items-center">
 
+        <div class="container align-center">
           <strong>{{card.name}}</strong>
-
-          <button type="button" name="button" class="btn btn-sm" @click="removeSize(index)"><i class="fas fa-trash-alt"></i></button>
-          <button type="button" name="button" class="btn btn-sm" @click="expand(card)"><i class="fas fa-expand-arrows-alt"></i></button>
-
+          <div class="container align-items-center margin-left-10">
+            <button type="button" name="button" class="btn btn-sm" @click="removeSize(index)" v-if="card.category === 'default'"><i class="fas fa-trash-alt"></i></button>
+            <button type="button" name="button" class="btn btn-sm" @click="expand(card)"><i class="fas fa-expand-arrows-alt"></i></button>
+          </div>
         </div>
-        <div class="container ">
+
+        <div class="container sizes-box">
           <div class="flex-grow-1 container align-items-center">
             <span>W</span>
             <input type="number" v-model="card.width" name="" value="">
@@ -73,10 +74,6 @@
         this.expandSize.name = card.name
         this.expandSize.width = card.width
         this.expandSize.height = card.height
-        console.log(this.expandSize);
-
-        // console.log(this.config.expand);
-        // this.config.expand = card.id
       }
     },
     computed: {

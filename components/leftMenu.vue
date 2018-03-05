@@ -90,7 +90,7 @@
       return {}
     },
     computed: {
-      ...mapState(['config'])
+      ...mapState(['config', 'expandSize'])
     }
   }
 </script>

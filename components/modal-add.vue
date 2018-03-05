@@ -1,6 +1,6 @@
 <template lang="html">
   <transition name="fade">
-  <div class="" v-show="config.newSize">
+    <div class="" v-show="config.newSize">
       <div class="modal container align-center">
         <div class="modal-block">
           <div class="modal-block--head container align-items-center justify-content-between">
@@ -40,8 +40,8 @@
           </div>
         </div>
       </div>
-  </div>
-</transition>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -64,7 +64,7 @@
       }
     },
     methods: {
-      addNewSize: function () {
+      addNewSize: function() {
         console.log(this.newCard);
         console.log(this.sizes)
 
@@ -75,10 +75,10 @@
           width: this.newCard.width,
           height: this.newCard.height
         })
-        //
+
         this.newCard.width = '',
-        this.newCard.height = '',
-        this.config.newSize = false
+          this.newCard.height = '',
+          this.config.newSize = false
       }
     },
     computed: {

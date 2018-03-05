@@ -1,15 +1,14 @@
 <template>
   <div class="">
-    <div>
-      <topMenu/>
+    <topMenu/>
+    <modalExpand/>
 
-      <transition name="fade">
-        <div class="container" v-show="config.url">
-          <leftMenu/>
-          <app/>
-        </div>
-      </transition>
-    </div>
+    <transition name="fade">
+      <div class="container" v-show="config.url">
+        <leftMenu/>
+        <app/>
+      </div>
+    </transition>
 
     <transition name="fade">
       <div v-show="!config.url">
@@ -17,16 +16,13 @@
           <div class="margin-bottom-10">
             <p>Enter a url</p>
           </div>
-
           <form class="container column text-align-center" @submit.prevent="validateBeforeSubmit">
             <input type="text" v-model="url" class="input input-opacity" name="url" id="url" placeholder="Ex: https://github.com" required v-validate="'required|url:http'">
             <span v-show="errors.has('url')" class="error margin-top-10">{{ errors.first('url') }}</span>
           </form>
-
           <div class="margin-top-10">
             <small>Don`t forget http:// or https://</small>
           </div>
-
           <div class="credits">
             <span>© 2018 Sizify</span>
           </div>
@@ -43,6 +39,7 @@
   import topMenu from '~/components/topMenu.vue'
   import leftMenu from '~/components/leftMenu.vue'
   import app from '~/components/app.vue'
+  import modalExpand from '~/components/modal-expand'
   import {
     mapState
   }
@@ -54,7 +51,8 @@
     components: {
       topMenu,
       leftMenu,
-      app
+      app,
+      modalExpand
     },
     computed: {
       ...mapState(['config'])
@@ -80,7 +78,6 @@
 </script>
 
 <style lang="scss">
-  @import './assets/css/main.scss';
   .content {
     height: calc(100vh - 60px);
     width: 100%;

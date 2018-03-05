@@ -1,9 +1,8 @@
 <template>
-  <div class='app container column'>
-    <card :data='sizes' />
+  <div class="app container column">
+    <card :data="sizes" />
     <modalQR/>
     <modalAdd/>
-    <modalExpand/>
   </div>
 </template>
 
@@ -11,7 +10,7 @@
   import card from '~/components/card'
   import modalQR from '~/components/modal-qr'
   import modalAdd from '~/components/modal-add'
-  import modalExpand from '~/components/modal-expand'
+
   import {
     mapState
   }
@@ -22,8 +21,7 @@
     components: {
       card,
       modalQR,
-      modalAdd,
-      modalExpand
+      modalAdd
     },
     data() {
       return {
