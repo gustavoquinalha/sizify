@@ -49,13 +49,7 @@
     name: 'card',
     data() {
       return {
-        expandSize: {
-          id: '',
-          category: '',
-          name: '',
-          width: '',
-          height: ''
-        }
+
       }
     },
     props: {
@@ -76,14 +70,17 @@
       },
 
       expand: function(card) {
-        console.log(card);
+        this.expandSize.name = card.name
+        this.expandSize.width = card.width
+        this.expandSize.height = card.height
+        console.log(this.expandSize);
 
-        console.log(this.config.expand);
-        this.config.expand = card.id
+        // console.log(this.config.expand);
+        // this.config.expand = card.id
       }
     },
     computed: {
-      ...mapState(['config', 'sizes'])
+      ...mapState(['config', 'sizes', 'expandSize'])
     }
   }
 </script>

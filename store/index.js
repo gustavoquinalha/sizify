@@ -8,7 +8,7 @@ const createStore = () => {
   return new Vuex.Store({
     state: {
       config: {
-        url: '',
+        url: 'http://quinalha.me/buttons-css',
         show: '', // mobile, tablet, defaul,
         landscape: false,
         keyboard: false,
@@ -17,8 +17,12 @@ const createStore = () => {
         qrcode: false,
         defaultHeight: false,
         newSize: false,
-        lastId: 10,
-        expand: ''
+        lastId: 10
+      },
+      expandSize: {
+        name: '',
+        width: '',
+        height: ''
       },
       sizes: [
         {

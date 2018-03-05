@@ -45,11 +45,11 @@
       }
     },
     computed: {
-      tey: function() {
-        this.url = this.config.url
-      },
+      ...mapState(['config']),
 
-      ...mapState(['config'])
+        setCurrentUrl: function(config) {
+          this.url = this.config.url
+        }
     },
     methods: {
       validateBeforeSubmit() {
@@ -58,8 +58,7 @@
             this.config.url = this.url
             return;
           }
-
-        });
+        })
       }
     }
   }

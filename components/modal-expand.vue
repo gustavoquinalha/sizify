@@ -1,39 +1,39 @@
 <template lang="html">
   <transition name="fade">
-    <div class="expand" v-show="config.expand">
+    <div class="expand" v-show="expandSize.name">
       <div class="expand__close container column">
         <div class="">
-          <button type="button" name="button" class="btn btn-danger btn-sm" @click="config.expand = ''"><i class="fas fa-times"></i></button>
+          <button type="button" name="button" class="btn btn-danger btn-sm" @click="closeModal()"><i class="fas fa-times"></i></button>
         </div>
         <div class="margin-top-10">
           <button type="button" name="button" class="btn btn-sm" @click="screenCapture()"><i class="fas fa-camera"></i></button>
         </div>
         <div class="margin-top-10">
-          <button type="button" name="button" class="btn btn-sm" @click="$store.commit('changeSizes')"><i class="fas fa-sync"></i></button>
+          <button type="button" name="button" class="btn btn-sm" @click="rotate()"><i class="fas fa-sync"></i></button>
         </div>
       </div>
 
-      <div class="block-img" v-for="(card, index) in sizes" v-if="card.id === config.expand" id="capture">
+      <div class="block-img" id="capture" :style="{width: (expandSize.width + 40) + 'px', height: (expandSize.height + 100) + 'px'}">
         <div class="container column align-center">
           <div class="">
-            <strong>{{card.name}}</strong>
+            <strong>{{expandSize.name}}</strong>
           </div>
           <div class="expanh__head container align-center">
             <div class="">
-              <strong>Width: </strong>{{card.width}}
+              <strong>Width: </strong>{{expandSize.width}}
             </div>
             <div class="margin-10">
               <span>x</span>
             </div>
             <div class="">
-              <strong>Height: </strong>{{card.height}}
+              <strong>Height: </strong>{{expandSize.height}}
             </div>
           </div>
         </div>
 
-        <div url="url" class="card" :style="{ width: card.width * config.size + 'px'}" v-if="card.id === config.expand">
-          <div class="card--content" :class="{'default-height' : config.defaultHeight}" :style="{transform: 'scale(' + config.size + ',' + config.size + ')', transformOrigin: 'left top 0px', height: card.height * config.size + 'px', width: card.width * config.size + 'px'}">
-            <iframe :src="config.url" :width="card.width" :height="card.height" :style="{ minWidth: card.width + 'px', height: card.height + 'px'}"></iframe>
+        <div url="url" class="card" :style="{ width: expandSize.width * config.size + 'px'}">
+          <div class="card--content" :class="{'default-height' : config.defaultHeight}" :style="{transform: 'scale(' + config.size + ',' + config.size + ')', transformOrigin: 'left top 0px', height: expandSize.height * config.size + 'px', width: expandSize.width * config.size + 'px'}">
+            <iframe :src="config.url" :width="expandSize.width" :height="expandSize.height" :style="{ minWidth: expandSize.width + 'px', height: expandSize.height + 'px'}"></iframe>
             <div class="card--content--keyboard" v-show="config.keyboard">
               <img src="~/assets/images/teclado-horizontal.png" alt="" v-if="config.landscape">
               <img src="~/assets/images/teclado-vertical.png" alt="" v-else>
@@ -53,10 +53,21 @@
   from 'vuex'
   export default {
     computed: {
-      ...mapState(['sizes', 'config'])
+      ...mapState(['sizes', 'config', 'expandSize'])
     },
 
     methods: {
+      closeModal: function() {
+        this.expandSize.name = ''
+        this.expandSize.width = ''
+        this.expandSize.height = ''
+      },
+      rotate: function() {
+        console.log("teste")
+        var sizeW = this.expandSize.width
+        this.expandSize.width = this.expandSize.height
+        this.expandSize.height = sizeW
+      },
       screenCapture: function() {
         html2canvas(document.querySelector("#capture"), {
           allowTaint: true,
@@ -81,6 +92,7 @@
   .block-img {
     padding: 20px;
     box-sizing: border-box;
+    margin: 0 auto;
   }
 
   .expand {
