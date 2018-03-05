@@ -91,6 +91,7 @@
         this.grid = !this.grid
       },
       screenCapture: function() {
+        this.config.loading = true
         html2canvas(document.querySelector("#captureSize"), {
           allowTaint: true,
           foreignObjectRendering: true,
@@ -104,6 +105,7 @@
           x.document.open();
           x.document.write(iframe);
           x.document.close();
+          this.config.loading = false
         })
       }
     }
