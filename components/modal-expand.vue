@@ -91,14 +91,17 @@
           allowTaint: true,
           foreignObjectRendering: true,
           useCORS: true,
+          logging: true,
         }).then(canvas => {
-          // document.body.appendChild(canvas).classList.add("expand-img");
-          var img = canvas.toDataURL()
-          var iframe = '<iframe src="' + img + '" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>'
-          var x = window.open();
-          x.document.open();
-          x.document.write(iframe);
-          x.document.close();
+          // var img = canvas.toDataURL("image/png")
+          // var iframe = '<img src="' + img + '" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:auto;"/>'
+          // var x = window.open();
+          // x.document.open();
+          // x.document.write(iframe);
+          // x.document.close();
+
+          var url = canvas.toDataURL("image/png")
+          window.open(url, "_blank")
         })
       }
     }

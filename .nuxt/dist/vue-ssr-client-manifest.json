@@ -7,23 +7,23 @@
     "img/teclado-horizontal.d21d105.png",
     "img/teclado-vertical.c974ed3.png",
     "img/keyboard.9429b82.svg",
-    "pages/index.8ec6d963cda61c55d5d7.js",
+    "pages/index.1dab859689bdd5026685.js",
     "img/logo.1bb8b45.svg",
     "vendor.f10615386e70c08e1892.js",
     "app.c6a3375f62ee7b8940af.js",
-    "manifest.c4377b9da407e62485a3.js",
+    "manifest.1bb36788aa6a2e1269c9.js",
     "LICENSES",
     "index.spa.html",
     "index.ssr.html"
   ],
   "initial": [
-    "manifest.c4377b9da407e62485a3.js",
+    "manifest.1bb36788aa6a2e1269c9.js",
     "vendor.f10615386e70c08e1892.js",
     "app.c6a3375f62ee7b8940af.js"
   ],
   "async": [
     "layouts/default.051b412758184c1f62df.js",
-    "pages/index.8ec6d963cda61c55d5d7.js"
+    "pages/index.1dab859689bdd5026685.js"
   ],
   "modules": {
     "21085139": [
@@ -170,7 +170,7 @@
       4,
       5
     ],
-    "7b1c7a48": [
+    "740dbf66": [
       6,
       1,
       7,
@@ -179,7 +179,7 @@
       4,
       5
     ],
-    "2d01cd6f": [
+    "7b1c7a48": [
       6,
       1,
       7,
@@ -378,15 +378,6 @@
       8
     ],
     "7e7bdaae": [
-      6,
-      1,
-      7,
-      2,
-      3,
-      4,
-      5
-    ],
-    "5412d448": [
       6,
       1,
       7,
@@ -715,6 +706,15 @@
     ],
     "a4fa3938": [
       9
+    ],
+    "6a7dfb98": [
+      6,
+      1,
+      7,
+      2,
+      3,
+      4,
+      5
     ],
     "7a653701": [
       9
@@ -1193,15 +1193,6 @@
     "fa85a8ea": [
       8
     ],
-    "79bc086c": [
-      6,
-      1,
-      7,
-      2,
-      3,
-      4,
-      5
-    ],
     "07d6336b": [
       8
     ],
@@ -1361,6 +1352,12 @@
     "7f05ce7c": [
       8
     ],
+    "88b985f4": [
+      8
+    ],
+    "77db3543": [
+      8
+    ],
     "2ccea6cf": [
       6,
       1,
@@ -1445,9 +1442,6 @@
     "dec03952": [
       8
     ],
-    "77db3543": [
-      8
-    ],
     "6738e60d": [
       8
     ],
@@ -1460,8 +1454,14 @@
       4,
       5
     ],
-    "88b985f4": [
-      8
+    "177b3d31": [
+      6,
+      1,
+      7,
+      2,
+      3,
+      4,
+      5
     ],
     "4cb10e3e": [
       9
