@@ -1,5 +1,7 @@
 # sizify
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6b0b1d9931b54436a6adad092d01f66f)](https://app.codacy.com/app/gustavoquinalha/Sizify?utm_source=github.com&utm_medium=referral&utm_content=gustavoquinalha/sizify&utm_campaign=badger)
+
 > A tool for preview changes and test on multiple devices instantly.
 
 For localhost url use http://127.0.0.1:3000/
