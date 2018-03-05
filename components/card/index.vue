@@ -5,10 +5,10 @@
       <div class="card--head container column align-center" :style="{width: card.width * config.size + 'px'}">
 
         <div class="container align-center">
-          <strong @click="teste()">{{card.name}}</strong>
+          <strong @click="checkIframeWidth()">{{card.name}}</strong>
           <div class="container align-items-center margin-left-10">
-            <button type="button" name="button" class="btn btn-sm" @click="removeSize(index)" v-if="card.category === 'default'"><i class="fas fa-trash-alt"></i></button>
-            <button type="button" name="button" class="btn btn-sm" @click="expand(card)"><i class="fas fa-expand-arrows-alt"></i></button>
+            <button type="button" name="button" class="btn btn-sm tooltip-right" title="Delete size" @click="removeSize(index)" v-if="card.category === 'default'"><i class="fas fa-trash-alt"></i></button>
+            <button type="button" name="button" class="btn btn-sm tooltip-right" title="Expanded mode" @click="expand(card)"><i class="fas fa-expand-arrows-alt"></i></button>
           </div>
         </div>
 
@@ -45,12 +45,13 @@
     mapState
   }
   from 'vuex'
+  import tippy from 'tippy.js';
 
   export default {
     name: 'card',
     data() {
       return {
-
+        default: false
       }
     },
     props: {
@@ -60,6 +61,12 @@
       url: {
         type: String
       }
+    },
+    mounted() {
+      tippy(document.querySelectorAll('.tooltip-right'), {
+        placement: 'top',
+        delay: 200,
+      })
     },
     methods: {
       removeSize: function(index) {
@@ -76,15 +83,15 @@
         this.expandSize.height = card.height
       },
 
-      teste: function() {
+      checkIframeWidth: function() {
         var iframeTeste = document.querySelector("#iframe-0")
         console.log(iframeTeste)
         var hasHorizontalScrollbar = iframeTeste.scrollWidth > iframeTeste.clientWidth
         var hasVerticalScrollbar = iframeTeste.scrollHeight > iframeTeste.clientHeight
         console.log(hasHorizontalScrollbar)
         console.log(hasVerticalScrollbar)
-
       }
+
     },
     computed: {
       ...mapState(['config', 'sizes', 'expandSize'])

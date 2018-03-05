@@ -3,16 +3,16 @@
     <div class="expand" v-show="expandSize.name">
       <div class="expand__close container column">
         <div class="">
-          <button type="button" name="button" class="btn btn-danger btn-sm" @click="closeModal()"><i class="fas fa-times"></i></button>
+          <button type="button" name="button" class="btn btn-danger btn-sm tooltip-right" title="Close expanded mode" @click="closeModal()"><i class="fas fa-times"></i></button>
         </div>
         <div class="margin-top-10">
-          <button type="button" name="button" class="btn btn-sm" @click="screenCapture()"><i class="fas fa-camera"></i></button>
+          <button type="button" name="button" class="btn btn-sm tooltip-right" @click="screenCapture()" title="Save as image"><i class="fas fa-camera"></i></button>
         </div>
         <div class="margin-top-10">
-          <button type="button" name="button" class="btn btn-sm" @click="toggleRotate()" :class="{rotate : rotate === true}"><i class="fas fa-mobile-alt"></i></button>
+          <button type="button" name="button" class="btn btn-sm tooltip-right" @click="toggleRotate()" title="Rotate orientation" :class="{rotate : rotate === true}"><i class="fas fa-mobile-alt"></i></button>
         </div>
         <div class="margin-top-10">
-          <button type="button" name="button" class="btn btn-sm" @click="toggleGrid()"><i class="fas fa-th"></i></button>
+          <button type="button" name="button" class="btn btn-sm tooltip-right" @click="toggleGrid()" title="Show grid view"><i class="fas fa-th"></i></button>
         </div>
       </div>
 
@@ -36,11 +36,9 @@
 
         <div url="url" class="card" :style="{ width: expandSize.width * config.size + 'px'}">
 
-
-
           <div class="card--content" :class="{'default-height' : config.defaultHeight}" :style="{transform: 'scale(' + config.size + ',' + config.size + ')', transformOrigin: 'left top 0px', height: expandSize.height * config.size + 'px', width: expandSize.width * config.size + 'px'}">
             <iframe :src="config.url" :width="expandSize.width" :height="expandSize.height" :style="{ minWidth: expandSize.width + 'px', height: expandSize.height + 'px'}"></iframe>
-            <div class="container-line"  v-show="grid">
+            <div class="container-line" v-show="grid">
               <div class="line" :style="{ left: (expandSize.width / 13) * x - 8 + 'px'}" v-for="x in 13"></div>
             </div>
             <div class="card--content--keyboard" v-show="config.keyboard">
@@ -56,6 +54,7 @@
 
 <script>
   import html2canvas from 'html2canvas';
+  import tippy from 'tippy.js';
   import {
     mapState
   }
@@ -69,6 +68,12 @@
         grid: false,
         rotate: false
       }
+    },
+    mounted() {
+      tippy(document.querySelectorAll('.tooltip-right'), {
+        placement: 'left-end',
+        delay: 200
+      })
     },
     methods: {
       closeModal: function() {
@@ -107,20 +112,21 @@
 </script>
 
 <style lang="scss" scoped>
-.container-line {
-  .line {
-    width: 1px;
-    background: rgb(29,241,255);
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 99999999;
+  .container-line {
+    .line {
+      width: 1px;
+      background: rgb(29, 241, 255);
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 99999999;
+    }
   }
-}
-.container-line > div:last-child {
-  background: transparent
-}
+
+  .container-line > div:last-child {
+    background: transparent
+  }
 
   .block-img {
     padding: 20px;
@@ -144,6 +150,9 @@
       right: 20px;
       top: 20px;
       z-index: 1000;
+      .btn {
+        width: 40px;
+      }
     }
     .expanh__head {
       margin-bottom: 10px;

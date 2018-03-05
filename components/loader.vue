@@ -1,5 +1,5 @@
 <template lang="html">
-  <transition name="fade">
+  <transition name="loader">
     <div class="loading" v-show="config.loading">
       <div class=""></div>
     </div>
@@ -7,10 +7,10 @@
 </template>
 
 <script>
-import {
-  mapState
-}
-from 'vuex'
+  import {
+    mapState
+  }
+  from 'vuex'
   export default {
     computed: {
       ...mapState(['config'])

@@ -1,6 +1,8 @@
 # sizify
 
-> Nuxt.js project
+> A tool for preview changes and test on multiple devices instantly.
+
+For localhost url use http://127.0.0.1:3000/
 
 ## Build Setup
 
@@ -17,6 +19,9 @@ $ npm start
 
 # generate static project
 $ npm run generate
+
+# deploy static project
+$ npm run deploy
 ```
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).

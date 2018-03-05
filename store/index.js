@@ -8,7 +8,7 @@ const createStore = () => {
   return new Vuex.Store({
     state: {
       config: {
-        url: 'http://adas.dasdsa',
+        url: '',
         show: '', // mobile, tablet, defaul,
         landscape: false,
         keyboard: false,

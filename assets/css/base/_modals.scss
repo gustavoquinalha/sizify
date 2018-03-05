@@ -7,29 +7,35 @@
   width: 100%;
   background: rgba(0, 0, 0, .5);
   z-index: 1000;
+
   .modal-block {
     background: #fff;
     width: 400px;
     max-width: 90%;
     border-radius: 4px;
     overflow: hidden;
+
     > div {
       padding: 20px;
       box-sizing: border-box;
     }
+
     .modal-block--head {
       background: #f4f4f4;
       border-bottom: 1px solid #ddd;
       font-weight: 900;
+
       .close {
         cursor: pointer;
-        opacity: .5;
-        transition: .3s;
+        opacity: 0.5;
+        transition: 0.3s;
+
         &:hover {
-          opacity: 1
+          opacity: 1;
         }
       }
     }
+
     .modal-block--content {
       .qrcode {}
     }

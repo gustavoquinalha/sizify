@@ -42,10 +42,6 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.0.6/css/all.css' }
     ],
   },
-  // plugins: [
-  //   {src: '~/plugins/canvas2image.js', ssr: false},
-  //   {src: '~/plugins/html2canvas.js', ssr: false}
-  // ],
 
   /*
   ** Customize the progress bar color
@@ -58,11 +54,6 @@ module.exports = {
     vendor: [
       '~/plugins/canvas2image.js'
     ],
-
-
-    /*
-    ** Run ESLint on save
-    */
     extend (config, ctx) {
       config.module.rules.forEach((rule) => {
         if (rule.test.toString() === '/\\.vue$/') {

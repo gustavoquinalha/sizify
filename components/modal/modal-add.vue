@@ -65,9 +65,6 @@
     },
     methods: {
       addNewSize: function() {
-        console.log(this.newCard);
-        console.log(this.sizes)
-
         this.sizes.push({
           id: this.config.lastId++,
           category: this.newCard.category,
@@ -77,8 +74,8 @@
         })
 
         this.newCard.width = '',
-          this.newCard.height = '',
-          this.config.newSize = false
+        this.newCard.height = '',
+        this.config.newSize = false
       }
     },
     computed: {
