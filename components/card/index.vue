@@ -7,8 +7,8 @@
         <div class="container align-center">
           <strong @click="checkIframeWidth()">{{card.name}}</strong>
           <div class="container align-items-center margin-left-10">
-            <button type="button" name="button" class="btn btn-sm tooltip-right" title="Delete size" @click="removeSize(index)" v-if="card.category === 'default'"><i class="fas fa-trash-alt"></i></button>
-            <button type="button" name="button" class="btn btn-sm tooltip-right" title="Expanded mode" @click="expand(card)"><i class="fas fa-expand-arrows-alt"></i></button>
+            <button type="button" name="button" class="btn btn-sm tooltip-top" title="Delete size" @click="removeSize(index)" v-if="card.category === 'default'"><i class="fas fa-trash-alt"></i></button>
+            <button type="button" name="button" class="btn btn-sm tooltip-top" title="Expanded mode" @click="expand(card)"><i class="fas fa-expand-arrows-alt"></i></button>
           </div>
         </div>
 
@@ -63,7 +63,7 @@
       }
     },
     mounted() {
-      tippy(document.querySelectorAll('.tooltip-right'), {
+      tippy(document.querySelectorAll('.tooltip-top'), {
         placement: 'top',
         delay: 200,
       })

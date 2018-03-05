@@ -3,16 +3,16 @@
     <div class="expand" v-show="expandSize.name">
       <div class="expand__close container column">
         <div class="">
-          <button type="button" name="button" class="btn btn-danger btn-sm tooltip-right" title="Close expanded mode" @click="closeModal()"><i class="fas fa-times"></i></button>
+          <button type="button" name="button" class="btn btn-danger btn-sm tooltip-left" title="Close expanded mode" @click="closeModal()"><i class="fas fa-times"></i></button>
         </div>
         <div class="margin-top-10">
-          <button type="button" name="button" class="btn btn-sm tooltip-right" @click="screenCapture()" title="Save as image"><i class="fas fa-camera"></i></button>
+          <button type="button" name="button" class="btn btn-sm tooltip-left" @click="screenCapture()" title="Save as image"><i class="fas fa-camera"></i></button>
         </div>
         <div class="margin-top-10">
-          <button type="button" name="button" class="btn btn-sm tooltip-right" @click="toggleRotate()" title="Rotate orientation" :class="{rotate : rotate === true}"><i class="fas fa-mobile-alt"></i></button>
+          <button type="button" name="button" class="btn btn-sm tooltip-left" @click="toggleRotate()" title="Rotate orientation" :class="{rotate : rotate === true}"><i class="fas fa-mobile-alt"></i></button>
         </div>
         <div class="margin-top-10">
-          <button type="button" name="button" class="btn btn-sm tooltip-right" @click="toggleGrid()" title="Show grid view"><i class="fas fa-th"></i></button>
+          <button type="button" name="button" class="btn btn-sm tooltip-left" @click="toggleGrid()" title="Show grid view"><i class="fas fa-th"></i></button>
         </div>
       </div>
 
@@ -70,7 +70,7 @@
       }
     },
     mounted() {
-      tippy(document.querySelectorAll('.tooltip-right'), {
+      tippy(document.querySelectorAll('.tooltip-left'), {
         placement: 'left-end',
         delay: 200
       })

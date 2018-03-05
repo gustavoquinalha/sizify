@@ -51,9 +51,9 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    vendor: [
-      '~/plugins/canvas2image.js'
-    ],
+    // vendor: [
+    //   '~/plugins/canvas2image.js'
+    // ],
     extend (config, ctx) {
       config.module.rules.forEach((rule) => {
         if (rule.test.toString() === '/\\.vue$/') {

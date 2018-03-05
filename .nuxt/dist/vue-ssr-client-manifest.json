@@ -1,26 +1,26 @@
 {
   "publicPath": "/sizify/_nuxt/",
   "all": [
-    "vendor.f10615386e70c08e1892.js",
+    "vendor.2a89a43f0b2419881787.js",
     "img/logo.1bb8b45.svg",
     "img/teclado-horizontal.d21d105.png",
     "img/teclado-vertical.c974ed3.png",
-    "pages/index.47830fadca0eda20bb4f.js",
+    "pages/index.6974b55daa4941bf222e.js",
     "layouts/default.fb7a4a39133936acba4f.js",
     "img/all.d89ac43.svg",
     "app.cecc2522fd85d7839ba7.js",
-    "manifest.4cf3a3f339547baef78d.js",
+    "manifest.4835625f4d5c3b224912.js",
     "LICENSES",
     "index.spa.html",
     "index.ssr.html"
   ],
   "initial": [
-    "manifest.4cf3a3f339547baef78d.js",
-    "vendor.f10615386e70c08e1892.js",
+    "manifest.4835625f4d5c3b224912.js",
+    "vendor.2a89a43f0b2419881787.js",
     "app.cecc2522fd85d7839ba7.js"
   ],
   "async": [
-    "pages/index.47830fadca0eda20bb4f.js",
+    "pages/index.6974b55daa4941bf222e.js",
     "layouts/default.fb7a4a39133936acba4f.js"
   ],
   "modules": {
@@ -691,9 +691,6 @@
     "57b20c76": [
       0
     ],
-    "012d3cc6": [
-      0
-    ],
     "7fd24542": [
       0
     ],
@@ -1221,10 +1218,10 @@
       2,
       3
     ],
-    "66275ead": [
+    "629e580d": [
       0
     ],
-    "77db3543": [
+    "66275ead": [
       0
     ],
     "dec03952": [
