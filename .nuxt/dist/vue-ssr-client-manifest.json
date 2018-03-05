@@ -7,23 +7,23 @@
     "img/teclado-horizontal.d21d105.png",
     "img/teclado-vertical.c974ed3.png",
     "img/keyboard.9429b82.svg",
-    "pages/index.1dab859689bdd5026685.js",
+    "pages/index.84efebe446fea52378ec.js",
     "img/logo.1bb8b45.svg",
     "vendor.f10615386e70c08e1892.js",
     "app.c6a3375f62ee7b8940af.js",
-    "manifest.1bb36788aa6a2e1269c9.js",
+    "manifest.06b1ff057fea54b8388a.js",
     "LICENSES",
     "index.spa.html",
     "index.ssr.html"
   ],
   "initial": [
-    "manifest.1bb36788aa6a2e1269c9.js",
+    "manifest.06b1ff057fea54b8388a.js",
     "vendor.f10615386e70c08e1892.js",
     "app.c6a3375f62ee7b8940af.js"
   ],
   "async": [
     "layouts/default.051b412758184c1f62df.js",
-    "pages/index.1dab859689bdd5026685.js"
+    "pages/index.84efebe446fea52378ec.js"
   ],
   "modules": {
     "21085139": [
@@ -170,7 +170,7 @@
       4,
       5
     ],
-    "740dbf66": [
+    "9ce3751a": [
       6,
       1,
       7,
@@ -232,6 +232,15 @@
     ],
     "3d3b11cc": [
       8
+    ],
+    "4f3ba4d7": [
+      6,
+      1,
+      7,
+      2,
+      3,
+      4,
+      5
     ],
     "bd41e2ce": [
       8
@@ -656,6 +665,15 @@
       4,
       5
     ],
+    "028169da": [
+      6,
+      1,
+      7,
+      2,
+      3,
+      4,
+      5
+    ],
     "4db0c700": [
       6,
       1,
@@ -706,15 +724,6 @@
     ],
     "a4fa3938": [
       9
-    ],
-    "6a7dfb98": [
-      6,
-      1,
-      7,
-      2,
-      3,
-      4,
-      5
     ],
     "7a653701": [
       9
@@ -1352,12 +1361,6 @@
     "7f05ce7c": [
       8
     ],
-    "88b985f4": [
-      8
-    ],
-    "77db3543": [
-      8
-    ],
     "2ccea6cf": [
       6,
       1,
@@ -1454,17 +1457,14 @@
       4,
       5
     ],
-    "177b3d31": [
-      6,
-      1,
-      7,
-      2,
-      3,
-      4,
-      5
+    "88b985f4": [
+      8
     ],
     "4cb10e3e": [
       9
+    ],
+    "77db3543": [
+      8
     ],
     "6a49efae": [
       8

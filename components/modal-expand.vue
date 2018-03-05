@@ -92,16 +92,15 @@
           foreignObjectRendering: true,
           useCORS: true,
           logging: true,
+          letterRendering: true
         }).then(canvas => {
-          // var img = canvas.toDataURL("image/png")
-          // var iframe = '<img src="' + img + '" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:auto;"/>'
-          // var x = window.open();
-          // x.document.open();
-          // x.document.write(iframe);
-          // x.document.close();
-
           var url = canvas.toDataURL("image/png")
-          window.open(url, "_blank")
+          var url = canvas.toDataURL();
+          var img = '<img src="' + url + '" style="border:0;"></img>'
+          var x = window.open();
+          x.document.open();
+          x.document.write(img);
+          x.document.close();
         })
       }
     }
@@ -114,6 +113,7 @@
     padding: 20px;
     box-sizing: border-box;
     margin: 0 auto;
+    border-radius: 20px;
   }
 
   .expand {
