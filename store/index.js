@@ -17,7 +17,8 @@ const createStore = () => {
         qrcode: false,
         defaultHeight: false,
         newSize: false,
-        lastId: 10
+        lastId: 10,
+        loading: false
       },
       expandSize: {
         name: '',

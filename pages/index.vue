@@ -17,18 +17,20 @@
             <p>Enter a url</p>
           </div>
           <form class="container column text-align-center" @submit.prevent="validateBeforeSubmit">
-            <input type="text" v-model="url" class="input input-opacity" name="url" id="url" placeholder="Ex: https://github.com" required v-validate="'required|url:http'">
+            <input type="text" v-model="url" class="input input-opacity" name="url" id="url" placeholder="Ex: https://github.com" required v-validate="'required|url:http:port'">
             <span v-show="errors.has('url')" class="error margin-top-10">{{ errors.first('url') }}</span>
           </form>
           <div class="margin-top-10">
             <small>Don`t forget http:// or https://</small>
           </div>
           <div class="credits">
-            <span>© 2018 Sizify</span>
+            <span>© 2018 Sizify </span>
           </div>
         </div>
       </div>
     </transition>
+
+    <loader/>
 
   </div>
 </template>
@@ -39,7 +41,8 @@
   import topMenu from '~/components/topMenu.vue'
   import leftMenu from '~/components/leftMenu.vue'
   import app from '~/components/app.vue'
-  import modalExpand from '~/components/modal-expand'
+  import modalExpand from '~/components/modal/modal-expand'
+  import loader from '~/components/loader'
   import {
     mapState
   }
@@ -52,22 +55,25 @@
       topMenu,
       leftMenu,
       app,
-      modalExpand
+      modalExpand,
+      loader
     },
     computed: {
-      ...mapState(['config'])
-
+      ...mapState(['config']),
     },
     methods: {
       validateBeforeSubmit() {
         this.$validator.validateAll().then((result) => {
           if (result) {
-            this.config.url = this.url
-            return;
+            this.config.loading = true
+            setTimeout(() => {
+              this.config.url = this.url
+              this.config.loading = false
+              return;
+            }, 1000)
           }
-
-        });
-      },
+        })
+      }
     },
     data() {
       return {

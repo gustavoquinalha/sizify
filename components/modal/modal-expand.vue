@@ -16,7 +16,7 @@
         </div>
       </div>
 
-      <div class="block-img" id="capture" :style="{width: (expandSize.width + 40) + 'px', height: (expandSize.height + 100) + 'px'}">
+      <div class="block-img" id="captureSize" :style="{width: (expandSize.width + 40) + 'px', height: (expandSize.height + 100) + 'px'}">
         <div class="container column align-center">
           <div class="">
             <strong>{{expandSize.name}}</strong>
@@ -36,14 +36,13 @@
 
         <div url="url" class="card" :style="{ width: expandSize.width * config.size + 'px'}">
 
-          <div class="container-lines" v-show="grid">
-            <div class="line" v-for="x in 12">
 
-            </div>
-          </div>
 
           <div class="card--content" :class="{'default-height' : config.defaultHeight}" :style="{transform: 'scale(' + config.size + ',' + config.size + ')', transformOrigin: 'left top 0px', height: expandSize.height * config.size + 'px', width: expandSize.width * config.size + 'px'}">
             <iframe :src="config.url" :width="expandSize.width" :height="expandSize.height" :style="{ minWidth: expandSize.width + 'px', height: expandSize.height + 'px'}"></iframe>
+            <div class="container-line"  v-show="grid">
+              <div class="line" :style="{ left: (expandSize.width / 13) * x - 8 + 'px'}" v-for="x in 13"></div>
+            </div>
             <div class="card--content--keyboard" v-show="config.keyboard">
               <img src="~/assets/images/teclado-horizontal.png" alt="" v-if="config.landscape">
               <img src="~/assets/images/teclado-vertical.png" alt="" v-else>
@@ -87,19 +86,18 @@
         this.grid = !this.grid
       },
       screenCapture: function() {
-        html2canvas(document.querySelector("#capture"), {
+        html2canvas(document.querySelector("#captureSize"), {
           allowTaint: true,
           foreignObjectRendering: true,
           useCORS: true,
           logging: true,
           letterRendering: true
         }).then(canvas => {
-          var url = canvas.toDataURL("image/png")
-          var url = canvas.toDataURL();
-          var img = '<img src="' + url + '" style="border:0;"></img>'
+          var img = canvas.toDataURL("image/png")
+          var iframe = '<img src="' + img + '" />'
           var x = window.open();
           x.document.open();
-          x.document.write(img);
+          x.document.write(iframe);
           x.document.close();
         })
       }
@@ -109,11 +107,25 @@
 </script>
 
 <style lang="scss" scoped>
+.container-line {
+  .line {
+    width: 1px;
+    background: rgb(29,241,255);
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 99999999;
+  }
+}
+.container-line > div:last-child {
+  background: transparent
+}
+
   .block-img {
     padding: 20px;
     box-sizing: border-box;
     margin: 0 auto;
-    border-radius: 20px;
   }
 
   .expand {
@@ -147,22 +159,6 @@
 
   .margin-10 {
     margin: 0 10px!important
-  }
-
-  .container-lines {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: calc(100% - 13px);
-    height: 100%;
-    z-index: 99999999;
-    display: flex;
-    justify-content: space-around;
-    .line {
-      width: 1px;
-      height: 100vh;
-      background: #58FFF5;
-    }
   }
 
   .rotate {

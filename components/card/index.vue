@@ -5,7 +5,7 @@
       <div class="card--head container column align-center" :style="{width: card.width * config.size + 'px'}">
 
         <div class="container align-center">
-          <strong>{{card.name}}</strong>
+          <strong @click="teste()">{{card.name}}</strong>
           <div class="container align-items-center margin-left-10">
             <button type="button" name="button" class="btn btn-sm" @click="removeSize(index)" v-if="card.category === 'default'"><i class="fas fa-trash-alt"></i></button>
             <button type="button" name="button" class="btn btn-sm" @click="expand(card)"><i class="fas fa-expand-arrows-alt"></i></button>
@@ -28,7 +28,7 @@
       </div>
 
       <div class="card--content" :class="{'default-height' : config.defaultHeight}" :style="{transform: 'scale(' + config.size + ',' + config.size + ')', transformOrigin: 'left top 0px', height: card.height * config.size + 'px', width: card.width * config.size + 'px'}">
-        <iframe :src="config.url" :width="card.width" :height="card.height" :style="{ minWidth: card.width + 'px', height: card.height + 'px'}"></iframe>
+        <iframe :id="'iframe-' + index" :src="config.url" :width="card.width" :height="card.height" :style="{ minWidth: card.width + 'px', height: card.height + 'px'}"></iframe>
         <div class="card--content--keyboard" v-show="config.keyboard">
           <img src="~/assets/images/teclado-horizontal.png" alt="" v-if="config.landscape">
           <img src="~/assets/images/teclado-vertical.png" alt="" v-else>
@@ -74,6 +74,16 @@
         this.expandSize.name = card.name
         this.expandSize.width = card.width
         this.expandSize.height = card.height
+      },
+
+      teste: function() {
+        var iframeTeste = document.querySelector("#iframe-0")
+        console.log(iframeTeste)
+        var hasHorizontalScrollbar = iframeTeste.scrollWidth > iframeTeste.clientWidth
+        var hasVerticalScrollbar = iframeTeste.scrollHeight > iframeTeste.clientHeight
+        console.log(hasHorizontalScrollbar)
+        console.log(hasVerticalScrollbar)
+
       }
     },
     computed: {

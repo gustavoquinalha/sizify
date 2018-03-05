@@ -8,8 +8,8 @@
 
 <script>
   import card from '~/components/card'
-  import modalQR from '~/components/modal-qr'
-  import modalAdd from '~/components/modal-add'
+  import modalQR from '~/components/modal/modal-qr'
+  import modalAdd from '~/components/modal/modal-add'
 
   import {
     mapState

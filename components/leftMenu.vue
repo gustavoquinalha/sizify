@@ -10,35 +10,35 @@
 
           <div class="block-left-menu container column justify-content-center align-items-center">
             <div class="item-left-menu" @click="config.show = ''" :class="{ active : config.show === '' }">
-              <img src="~/assets/images/icons/all.svg" width="23" alt="" />
+              <img src="~/assets/images/icons/all.svg" width="21" alt="" />
             </div>
 
             <div class="item-left-menu" @click="config.show = 'mobile'" :class="{ active : config.show === 'mobile' }">
-              <img src="~/assets/images/icons/phone.svg" width="20" alt="" />
+              <i class="fas fa-mobile-alt"></i>
             </div>
 
             <div class="item-left-menu" @click="config.show = 'tablet'" :class="{ active : config.show === 'tablet' }">
-              <img src="~/assets/images/icons/tablet.svg" width="23" alt="" />
+              <i class="fas fa-tablet-alt"></i>
             </div>
 
             <div class="item-left-menu" @click="config.show = 'default'" :class="{ active : config.show === 'default' }">
-              <img src="~/assets/images/icons/default.svg" width="18" alt="" />
+              <i class="fas fa-expand"></i>
             </div>
           </div>
 
           <div class="block-left-menu container column justify-content-center align-items-center">
             <div class="item-left-menu active" @click="$store.commit('changeSizes')" :class="{ rotate : config.landscape }">
-              <img src="~/assets/images/icons/vertical.svg" width="23" alt="" />
+              <i class="fas fa-mobile-alt"></i>
             </div>
 
             <div class="item-left-menu" @click="$store.commit('showKeyboard')" :class="{ active : config.keyboard }">
-              <img src="~/assets/images/icons/keyboard.svg" width="20" alt="" />
+            <i class="fas fa-keyboard"></i>
             </div>
           </div>
 
           <div class="block-left-menu container column justify-content-center align-items-center">
             <div class="item-left-menu" @click="$store.commit('setHeight')" :class="{ active : config.defaultHeight }">
-              <img src="~/assets/images/icons/height.svg" width="18" alt="" />
+              <i class="fas fa-columns"></i>
             </div>
           </div>
 
@@ -68,7 +68,7 @@
 
           <div class="block-left-menu container column justify-content-center align-items-center">
             <div class="item-left-menu" @click="config.qrcode = true">
-              <img src="~/assets/images/icons/qrcode.svg" width="18" alt="" />
+              <i class="fas fa-qrcode"></i>
             </div>
           </div>
 
