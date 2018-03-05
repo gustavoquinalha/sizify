@@ -5,22 +5,22 @@
     "img/logo.1bb8b45.svg",
     "img/teclado-horizontal.d21d105.png",
     "img/teclado-vertical.c974ed3.png",
-    "pages/index.013dedd17695d2e02b6a.js",
+    "pages/index.414be3bbb69fd37c42fe.js",
     "layouts/default.fb7a4a39133936acba4f.js",
     "img/all.d89ac43.svg",
     "app.cecc2522fd85d7839ba7.js",
-    "manifest.1deef4f577b05622f07a.js",
+    "manifest.8bc51c02bd5ce3a84f25.js",
     "LICENSES",
     "index.spa.html",
     "index.ssr.html"
   ],
   "initial": [
-    "manifest.1deef4f577b05622f07a.js",
+    "manifest.8bc51c02bd5ce3a84f25.js",
     "vendor.2a89a43f0b2419881787.js",
     "app.cecc2522fd85d7839ba7.js"
   ],
   "async": [
-    "pages/index.013dedd17695d2e02b6a.js",
+    "pages/index.414be3bbb69fd37c42fe.js",
     "layouts/default.fb7a4a39133936acba4f.js"
   ],
   "modules": {

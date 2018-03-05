@@ -94,7 +94,7 @@
         this.config.loading = true
         html2canvas(document.querySelector("#captureSize"), {
           allowTaint: true,
-          foreignObjectRendering: true,
+          // foreignObjectRendering: true,
           useCORS: true,
           logging: true,
           letterRendering: true
