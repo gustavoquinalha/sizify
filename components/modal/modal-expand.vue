@@ -94,10 +94,10 @@
         this.config.loading = true
         html2canvas(document.querySelector("#captureSize"), {
           allowTaint: true,
-          // foreignObjectRendering: true,
+          foreignObjectRendering: true,
           useCORS: true,
           logging: true,
-          letterRendering: true
+          letterRendering: true,
         }).then(canvas => {
           var img = canvas.toDataURL("image/png")
           var iframe = '<img src="' + img + '" />'
