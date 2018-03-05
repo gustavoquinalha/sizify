@@ -51,6 +51,11 @@
           this.url = this.config.url
         }
     },
+    watch: {
+      setCurrentUrl: function(val) {
+        this.url = this.config.url
+      }
+    },
     methods: {
       validateBeforeSubmit() {
         this.$validator.validateAll().then((result) => {
