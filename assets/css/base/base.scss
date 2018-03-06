@@ -2,7 +2,6 @@ body,
 html {
   margin: 0;
   background: #24292e;
-  overflow: hidden;
 }
 
 html {
@@ -131,4 +130,12 @@ input {
     border: 2px solid #575C60;
     background-color: #191B1D;
   }
+}
+
+.box-title {
+  color: #fff;
+  width: 400px;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
