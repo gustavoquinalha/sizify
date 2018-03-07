@@ -2,7 +2,7 @@
   <div class="stats-container container wrap justify-content-center">
 
     <div class="stats-container--iframe">
-      <iframe :src="config.url" width="480" height="520" id="loko"></iframe>
+      <iframe :src="config.url" width="480" height="520" id="ifrm"></iframe>
       <div class="margin-top-10">
         <button type="button" name="button" class="btn btn-primary" @click="stats()">Generate stat</button>
       </div>
@@ -17,6 +17,8 @@
 </template>
 
 <script>
+  // import metadataparser from 'html-metadata'
+  // const {getMetadata} = require('html-metadata');
   import {
     mapState
   }
@@ -29,15 +31,16 @@
     },
     methods: {
       stats: function() {
-        // var x = document.getElementsByTagName("META")
-        var x = document.getElementById('loko').contentWindow.document.getElementsByTagName('META')
-        var resultDiv = document.getElementById("result")
+        var ifrm = document.getElementById('ifrm');
+        var win = ifrm.contentWindow; // reference to iframe's window
+        var doc = ifrm.contentDocument ? ifrm.contentDocument : ifrm.contentWindow.document;
+        var x = doc.getElementsByTagName('META');
 
         for (var i = 0; i < x.length; i++) {
           var txtResult = `${txtResult} <li><strong>${x[i].name}</strong> <span>${x[i].content}</li>`
-          // console.log(x[i].name + x[i].content)
         }
 
+        var resultDiv = document.getElementById("result")
         document.getElementById("result").innerHTML = txtResult;
         this.statsResult = txtResult
 

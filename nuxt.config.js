@@ -5,6 +5,9 @@ module.exports = {
   css: [
     'node_modules/the-grid-flexbox/css/the-grid.min.css'
   ],
+  node: {
+    fs: 'empty'
+  },
   head: {
     title: 'Sizify',
     meta: [
