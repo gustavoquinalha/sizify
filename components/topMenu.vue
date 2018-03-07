@@ -9,19 +9,45 @@
           </nuxt-link>
         </div>
 
-        <div class="menu--search flex-basis-300 container align-items-center" v-show="config.url">
-          <form class="container align-items-center text-align-center" @submit.prevent="validateBeforeSubmit">
-            <input type="text" v-model="url" class="input input-opacity" name="url" id="url" placeholder="Ex: https://github.com" required v-validate="'required|url:http'">
-            <div class="absolute-error">
-              <span v-show="errors.has('url')" class="error margin-top-10">{{ errors.first('url') }}</span>
-            </div>
-          </form>
-        </div>
+
+        <transition name="loader">
+          <div class="menu--search flex-basis-300 container align-items-center" v-show="config.url">
+            <form class="container align-items-center text-align-center" @submit.prevent="validateBeforeSubmit">
+              <input type="text" v-model="url" class="input input-opacity" name="url" id="url" placeholder="Ex: https://github.com" required v-validate="'required|url:http'">
+              <div class="absolute-error">
+                <transition name="loader">
+                  <span v-show="errors.has('url')" class="error margin-top-10">{{ errors.first('url') }}</span>
+                </transition>
+              </div>
+            </form>
+          </div>
+        </transition>
+
+        <transition name="loader">
+          <div class="back" v-show="$nuxt.$route.name === 'faq'">
+            <nuxt-link :to="{ name: 'index', params: {} }">
+              <i class="fas fa-arrow-left"></i>
+              <span> back to aplication</span>
+            </nuxt-link>
+          </div>
+        </transition>
 
         <div class="menu--links margin-left-10 flex-grow-1 container justify-content-end align-items-center">
-          <a href="https://github.com/gustavoquinalha/sizify" target="_blank">
-            <img src="~/assets/images/icons/github.svg" width="30" alt="" />
-          </a>
+          <ul class="container align-items-center">
+            <li>
+              <nuxt-link :to="{ name: 'faq', params: {} }" class="tooltip-top" title="Any question?">
+                <i class="fas fa-question"></i>
+                <!-- FAQ -->
+              </nuxt-link>
+            </li>
+            <li>
+              <a href="https://github.com/gustavoquinalha/sizify" target="_blank" class="tooltip-top" title="Show me the code">
+                <i class="fab fa-github"></i>
+                <!-- Github -->
+              </a>
+            </li>
+          </ul>
+
         </div>
 
       </div>
@@ -30,8 +56,7 @@
 </template>
 
 <script>
-  import Vue from 'vue';
-  import VeeValidate from 'vee-validate';
+  import tippy from 'tippy.js';
   import {
     mapState
   }
@@ -56,6 +81,11 @@
         this.url = this.config.url
       }
     },
+    mounted() {
+      tippy(document.querySelectorAll('.tooltip-top'), {
+        placement: 'bottom-start'
+      })
+    },
     methods: {
       validateBeforeSubmit() {
         this.$validator.validateAll().then((result) => {
@@ -71,7 +101,7 @@
 
 <style lang="scss" scoped>
   .relative-menu {
-    background: #24292e;
+    background: $primary;
     position: relative;
     height: 60px;
   }
@@ -80,14 +110,14 @@
     height: 60px;
     width: 100%;
     position: fixed;
-    background: #24292e;
-    color: #fff;
+    background: $primary;
+    color: $white;
     z-index: 9;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .1)
   }
 
   .menu {
-    background: #24292e;
+    background: $primary;
     box-sizing: border-box;
     padding-left: 15px;
     padding-right: 15px;
@@ -105,6 +135,32 @@
       position: relative;
       form {
         width: 100%;
+      }
+    }
+    .menu--links {
+      ul {
+        list-style: none;
+        li {
+          margin-left: 20px;
+          a {
+            color: $grey;
+            text-decoration: none;
+            transition: .3s;
+            &:hover {
+              color: $white;
+            }
+          }
+          i {
+            font-size: 20px;
+          }
+          img {
+            opacity: .5;
+            transition: .3s;
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
       }
     }
   }
@@ -140,6 +196,19 @@
     @media (max-width: 720px) {
       left: 0;
       top: 48px;
+    }
+  }
+
+  .back {
+    margin: 10px;
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+    @media (max-width: 480px) {
+      span {
+        display: none
+      }
     }
   }
 </style>

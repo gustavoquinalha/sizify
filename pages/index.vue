@@ -1,6 +1,7 @@
 <template>
   <div class="">
-    <topMenu/>
+    <loader/>
+
     <modalExpand/>
 
     <transition name="fade">
@@ -11,19 +12,18 @@
     </transition>
 
     <transition name="fade">
-      <intro/>
+      <div class="" v-show="!config.url">
+        <intro/>
+      </div>
     </transition>
 
-    <loader/>
-
-    <footerBottom/>
+    <footerBottom v-show="!config.url" />
 
   </div>
 </template>
 
 <script>
   import Vue from 'vue';
-  import topMenu from '~/components/topMenu.vue'
   import leftMenu from '~/components/leftMenu.vue'
   import app from '~/components/app.vue'
   import modalExpand from '~/components/modal/modal-expand'
@@ -37,7 +37,6 @@
 
   export default {
     components: {
-      topMenu,
       leftMenu,
       app,
       modalExpand,
@@ -56,7 +55,3 @@
     }
   }
 </script>
-
-<style lang="scss">
-
-</style>

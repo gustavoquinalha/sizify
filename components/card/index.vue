@@ -28,7 +28,7 @@
       </div>
 
       <div class="card--content" :class="{'default-height' : config.defaultHeight}" :style="{transform: 'scale(' + config.size + ',' + config.size + ')', transformOrigin: 'left top 0px', height: card.height * config.size + 'px', width: card.width * config.size + 'px'}">
-        <iframe :id="'iframe-' + index" :src="config.url" :width="card.width" :height="card.height" :style="{ minWidth: card.width + 'px', height: card.height + 'px'}"></iframe>
+        <iframe scrolling="yes" :id="'iframe-' + index" :src="config.url" :width="card.width" :height="card.height" :style="{ minWidth: card.width + 'px', height: card.height + 'px'}"></iframe>
         <div class="card--content--keyboard" v-show="config.keyboard">
           <img src="~/assets/images/teclado-horizontal.png" alt="" v-if="config.landscape">
           <img src="~/assets/images/teclado-vertical.png" alt="" v-else>

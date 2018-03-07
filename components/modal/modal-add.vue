@@ -8,7 +8,7 @@
               New size
             </div>
             <div class="close" @click="config.newSize = false">
-              <img src="~/assets/images/icons/x.svg" alt="" />
+              <i class="fas fa-times"></i>
             </div>
           </div>
           <div class="modal-block--content container column align-center">
@@ -17,10 +17,11 @@
               <p>You can add custom sizes.</p>
             </div>
 
-            <div class="container align-items-center container-sizes">
+            <form class="container align-items-center container-sizes" @submit.prevent="addNewSize">
               <div class="container flex-grow-1 align-items-center">
                 <span>W</span>
-                <input type="number" v-model="newCard.width" name="" value="" placeholder="Ex: 800">
+                <input type="number" v-model="newCard.width" name="number" value="" placeholder="Ex: 800" v-validate="'required|numeric'">
+                <span v-show="errors.has('newCard.width')" class="error margin-top-10">{{ errors.first('newCard.width') }}</span>
               </div>
 
               <div class="margin-20">
@@ -29,9 +30,10 @@
 
               <div class="container flex-grow-1 align-items-center">
                 <span>H</span>
-                <input type="number" v-model="newCard.height" name="" value="" placeholder="Ex: 600">
+                <input type="number" v-model="newCard.height" name="number" value="" placeholder="Ex: 600" v-validate="'required|numeric'">
+                <span v-show="errors.has('newCard.height')" class="error margin-top-10">{{ errors.first('newCard.height') }}</span>
               </div>
-            </div>
+            </form>
 
             <div class="margin-top-10" style="width: 100%">
               <button type="button" name="button" class="btn btn-primary btn-full-width" :class="{ disable : newCard.width === '' || newCard.height === ''}" @click="addNewSize">Add new size</button>
@@ -64,18 +66,22 @@
       }
     },
     methods: {
-      addNewSize: function() {
-        this.sizes.push({
-          id: this.config.lastId++,
-          category: this.newCard.category,
-          name: this.newCard.name,
-          width: this.newCard.width,
-          height: this.newCard.height
-        })
+      addNewSize() {
+        this.$validator.validateAll().then((result) => {
+          if (result) {
+            this.sizes.push({
+              id: this.config.lastId++,
+              category: this.newCard.category,
+              name: this.newCard.name,
+              width: this.newCard.width,
+              height: this.newCard.height
+            })
 
-        this.newCard.width = '',
-        this.newCard.height = '',
-        this.config.newSize = false
+            this.newCard.width = '',
+              this.newCard.height = '',
+              this.config.newSize = false
+          }
+        })
       }
     },
     computed: {

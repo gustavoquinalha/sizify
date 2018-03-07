@@ -8,7 +8,7 @@
               Qr code
             </div>
             <div class="close" @click="config.qrcode = false">
-              <img src="~/assets/images/icons/x.svg" alt="" />
+              <i class="fas fa-times"></i>
             </div>
           </div>
           <div class="modal-block--content container column align-center">
