@@ -63,6 +63,20 @@
       return {
         url: 'http://'
       }
+    },
+    methods: {
+      validateBeforeSubmit() {
+        this.$validator.validateAll().then((result) => {
+          if (result) {
+            this.config.loading = true
+            setTimeout(() => {
+              this.config.url = this.url
+              this.config.loading = false
+              return;
+            }, 1000)
+          }
+        })
+      }
     }
   }
 </script>
