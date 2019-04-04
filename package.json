@@ -16,7 +16,7 @@
   "dependencies": {
     "html-metadata": "^1.7.0",
     "html2canvas": "^1.0.0-alpha.10",
-    "nuxt": "^1.0.0-rc11",
+    "nuxt": "^2.6.0",
     "the-grid-flexbox": "^2.0.1",
     "tippy.js": "^2.2.3",
     "vee-validate": "^2.0.5",
