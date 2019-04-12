@@ -21,7 +21,7 @@
     "tippy.js": "^2.2.3",
     "vee-validate": "^2.0.5",
     "vue-qriously": "^1.1.1",
-    "vuex-cache": "^1.1.1"
+    "vuex-cache": "^3.1.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
