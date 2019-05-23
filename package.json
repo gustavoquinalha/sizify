@@ -19,7 +19,7 @@
     "nuxt": "^1.0.0-rc11",
     "the-grid-flexbox": "^2.0.1",
     "tippy.js": "^2.2.3",
-    "vee-validate": "^2.0.5",
+    "vee-validate": "^2.2.8",
     "vue-qriously": "^1.1.1",
     "vuex-cache": "^1.1.1"
   },
