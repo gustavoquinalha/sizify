@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "html-metadata": "^1.7.0",
-    "html2canvas": "^1.0.0-alpha.10",
+    "html2canvas": "^1.0.0-rc.4",
     "nuxt": "^1.0.0-rc11",
     "the-grid-flexbox": "^2.0.1",
     "tippy.js": "^2.2.3",
