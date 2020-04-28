@@ -18,7 +18,7 @@
     "html2canvas": "^1.0.0-alpha.10",
     "nuxt": "^1.0.0-rc11",
     "the-grid-flexbox": "^2.0.1",
-    "tippy.js": "^3.0.0",
+    "tippy.js": "^6.2.3",
     "vee-validate": "^3.0.0",
     "vue-qriously": "^1.1.1",
     "vuex-cache": "^1.1.1"
