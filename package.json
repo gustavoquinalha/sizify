@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
-    "coffee-loader": "^0.8.0",
+    "coffee-loader": "^1.0.0",
     "coffee-script": "^1.12.7",
     "eslint": "^4.3.0",
     "eslint-config-standard": "^10.2.1",
